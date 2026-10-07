@@ -1,17 +1,18 @@
 # Produktvision
 
 ## Målgrupp
-Medlemmar i en förening.
+Boende i Älvsbyns kommun
 
 ## Problem
-Föreningen saknar en webbapplikation som låter besökare hitta, söka och anmäla sig till evenemang.
+Älvsbyns kommun saknar en webbapplikation som låter besökare hitta, söka och anmäla sig till evenemang.
 
 ## Kundvärde
+- För boende i Älvsbyns kommun som har svårt att hitta evenemang hjälper vår produkt dem att hitta evenemang och medverka
 - En användarvänlig webbapplikation för besökare
 - Besökare ska kunna anmäla sig och sitt sällskap till ett evenemang
 
 ## Produktmål
-Webbapplikationen visar en filtrerbar lista på evenemang som man kan anmäla sig till
+Webbapplikationen visar en filtrerbar och sökbar lista på evenemang som man kan anmäla sig till
 
 ## Avgränsningar
 - Avanmälning
