@@ -6,11 +6,12 @@
 - Arrangör
 - Plats
 - Kategori
+- Anmälan
 
 ## Viktiga relationer
 - En besökare anmäler sig till inga/ett/flera evenemang
-- En arrangör håller ett/flera evenemang
-- Evenemang har exakt ett kategori och exakt en plats
+- Ett event hålls alltid i av exakt en arrangör men en arrangör kan finnas utan att hålla i ett event
+- Evenemang har exakt en kategori och exakt en plats
 
 ## Antaganden
 - En anmälning kan inte skapas utan en besökare
