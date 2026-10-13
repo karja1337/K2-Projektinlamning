@@ -13,12 +13,13 @@
 
 
 ## Project Purpose
-A web application for Älvsbyn Municipality that allows residents to find, search for, and register for local events.
+A web application for Älvsbyn municipality that allows residents to find, search for, and register for local events.
 
 Visitors can view upcoming events—including essential details such as date, start time, and location—and use a simple, secure method to register themselves or a group for an event.
 
-To help visitors find events that match their interests, the events can also be filtered by category. ## Project dependencies
-### Frameworks
+To help visitors find events that match their interests, the events can also be filtered by category. 
+## Project dependencies
+### Framework
 - N/A
 <!-- - .NET 10.0 (or newer) -->
 
