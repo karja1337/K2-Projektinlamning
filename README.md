@@ -1,61 +1,59 @@
 # EventFlow
 
-**Skapad:** `📆 2026-10-05`\
-**Utvecklad av:** 
-[`Emmased`](https://github.com/Emmased) 
-[`etc-ludwig`](https://github.com/etc-ludwig) 
-[`Jaktlund96`](https://github.com/Jaktlund96) 
-[`karja1337`](https://github.com/karja1337) 
+**Created:** `📆 2026-10-05`\
+**Developed by:**
+[`Emmased`](https://github.com/Emmased)
+[`etc-ludwig`](https://github.com/etc-ludwig)
+[`Jaktlund96`](https://github.com/Jaktlund96)
+[`karja1337`](https://github.com/karja1337)
 [`oliboh`](https://github.com/oliboh)
 
 > [!WARNING]
-> README under konstruktion!
+> README under construction!
 
 
-## Projektets syfte
-En webbapplikation för Älvsbyns kommun som låter kommunmedlemmar hitta, söka och anmäla sig till lokala evenemang.
+## Project Purpose
+A web application for Älvsbyn Municipality that allows residents to find, search for, and register for local events.
 
-Besökaren kan se kommande evenemang med nödvändig information (datum, starttid, plats, osv.) och ett enkelt och säkert sätt att anmäla sig eller sin grupp till evenemanget. 
+Visitors can view upcoming events—including essential details such as date, start time, and location—and use a simple, secure method to register themselves or a group for an event.
 
-För att hitta ett evenemang som passar besökarens intressen kan evenemangen också filtreras efter kategori.
-
-## Projektets beroenden
-### Ramverk
+To help visitors find events that match their interests, the events can also be filtered by category. ## Project dependencies
+### Frameworks
 - N/A
-<!-- - .NET 10.0 (eller nyare) -->
+<!-- - .NET 10.0 (or newer) -->
 
 
-<!-- 
-## Sätt upp och starta projektet
-### 1. Kopiera URL-länken
-Klicka på `<>Code` uppe till höger och kopiera HTTPS-länken
+<!--
+## Set up and start the project
+### 1. Copy the URL
+Click `<>Code` in the top right corner and copy the HTTPS link
 ```
 https://github.com/karja1337/K2-Projektinlamning.git
 ```
-### 2. Klona repot
-Öppna terminalen eller Git Bash, gå till mappen där du vill spara repot och kör:
+### 2. Clone the repo
+Open the terminal or Git Bash, navigate to the folder where you want to save the repo, and run:
 
 ```
 git clone https://github.com/karja1337/K2-Projektinlamning.git
 ```
 
-### 3. Gå till mappen
+### 3. Navigate to the folder
 
 ```
 cd .\FOLDER\
 ```
 
-### 4. Bygg och kör programmet
+### 4. Build and run the program
 
 ```
 dotnet run PROJECT.csproj
 ```
 
-För mer information: [GitHub Docs: Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+For more information: [GitHub Docs: Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 -->
 
 
-## Git-arbetsflöde
+## Git workflow
 - N/A
 
-## [Kanban tavla](https://github.com/users/karja1337/projects/2)
+## [Kanban board](https://github.com/users/karja1337/projects/2)
