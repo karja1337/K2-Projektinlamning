@@ -23,3 +23,31 @@
 
 ### Förändring i planen eller tavlan
 - behöver klona repo och skapa en branch för att skapa mapp att lägga loggen i
+
+
+---
+
+# Daily Scrum – datum 14 /10-26
+
+### Framsteg mot sprintmålet
+- Gjort klart user stories och acceptanskriterier
+- Har börjat strukturera databasen och skapat en första ERD
+- Planerat normaliseringen av databasen och skapat en första tabellstruktur
+
+### Arbete till nästa avstämning
+- beskrivit verksamheten och dess centrala regler
+- skapat ett konceptuellt ER-diagram
+- skapat en logisk modell i tredje normalform
+- kopplat datamodellen till user stories och kundvärde
+- förfinat backloggen utifrån ny kunskap
+- granskat modellen genom Pull Request
+- Skriva klart normaliserings dokumentationen
+
+### Hinder eller risker
+- Har ej gjort tabeller för Visitor och Registration än
+
+### Hjälp eller beslut som behövs
+- Review av normalization.md
+
+### Förändring i planen eller tavlan
+- Ingen förändring just nu
