@@ -7,9 +7,7 @@ CREATE TABLE Category
 (
 	CategoryId INT IDENTITY(1,1) PRIMARY KEY,
 	Title NVARCHAR (100) NOT NULL
-
 );
-GO
 
 CREATE TABLE EventDetail
 (
@@ -20,7 +18,6 @@ CREATE TABLE EventDetail
 	FOREIGN KEY (CategoryId)
 		REFERENCES Category(CategoryId)
 );
-GO
 
 CREATE TABLE Organizer
 (
@@ -28,7 +25,6 @@ CREATE TABLE Organizer
 	FullName NVARCHAR(100) NOT NULL,
 	Email NVARCHAR (255) NOT NULL
 );
-GO
 
 CREATE TABLE EventLocation
 (
@@ -36,7 +32,6 @@ CREATE TABLE EventLocation
 	Venue NVARCHAR(100),
 	VenueAdress NVARCHAR(100) NOT NULL
 );
-GO
 
 CREATE TABLE Visitor 
 (
@@ -45,7 +40,6 @@ CREATE TABLE Visitor
 	Email NVARCHAR(255) NOT NULL,
 	PhoneNumber NVARCHAR(100) NOT NULL
 );
-GO
 
 CREATE TABLE ScheduledEvent
 (
@@ -61,15 +55,13 @@ CREATE TABLE ScheduledEvent
 	EventDetailId INT NOT NULL,
 	FOREIGN KEY (EventDetailId)
 		REFERENCES EventDetail(EventdetailId)
-
 );
-GO
 
 CREATE TABLE Registration
 (
 	RegistrationId INT IDENTITY (1,1) PRIMARY KEY,
 	TimeOfRegistration DATETIME2 NOT NULL,
-	GroupSize NVARCHAR (10) NOT NULL,
+	GroupSize TINYINT NOT NULL,	
 	VisitorId INT NOT NULL,
 	FOREIGN KEY (VisitorId)
 		REFERENCES Visitor(VisitorId),
@@ -77,4 +69,3 @@ CREATE TABLE Registration
 	FOREIGN KEY (ScheduledEventId)
 		REFERENCES ScheduledEvent (ScheduledEventId)
 );
-GO
