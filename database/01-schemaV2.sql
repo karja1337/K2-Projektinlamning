@@ -15,7 +15,7 @@ CREATE TABLE EventDetail
 (
 	EventDetailId INT IDENTITY(1,1) PRIMARY KEY,
 	Title NVARCHAR(100) NOT NULL,
-	EventDescription NVARCHAR(100) NOT NULL,
+	EventDescription NVARCHAR(400) NOT NULL,
 	CategoryId INT NOT NULL,
 	FOREIGN KEY (CategoryId)
 		REFERENCES Category(CategoryId)
@@ -25,7 +25,8 @@ GO
 CREATE TABLE Organizer
 (
 	OrganizerId INT IDENTITY(1,1) PRIMARY KEY,
-	FullName NVARCHAR(100) NOT NULL
+	FullName NVARCHAR(100) NOT NULL,
+	Email NVARCHAR (255) NOT NULL
 );
 GO
 
@@ -68,7 +69,7 @@ CREATE TABLE Registration
 (
 	RegistrationId INT IDENTITY (1,1) PRIMARY KEY,
 	TimeOfRegistration DATETIME2 NOT NULL,
-	GroupSize NVARCHAR (100) NOT NULL,
+	GroupSize NVARCHAR (10) NOT NULL,
 	VisitorId INT NOT NULL,
 	FOREIGN KEY (VisitorId)
 		REFERENCES Visitor(VisitorId),
