@@ -1,3 +1,5 @@
+[Svenska](README_sv.md)
+
 # EventFlow
 
 **Created:** `📆 2026-10-05`\

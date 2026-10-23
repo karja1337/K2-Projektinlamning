@@ -1,3 +1,5 @@
+[English](README.md)
+
 # EventFlow
 
 **Skapad:** `📆 2026-10-05`\
