@@ -12,7 +12,8 @@ INSERT INTO Category (Title)
 		(N'Konst'),
 		(N'Film'),
 		(N'Barn & Familj'),
-		(N'Mat & Dryck');
+		(N'Mat & Dryck'),
+		(N'Loppis');
 
 -- EventDetail / Evenemangsdetaljer
 INSERT INTO EventDetail (Title, EventDescription, CategoryId)
@@ -42,11 +43,41 @@ INSERT INTO EventDetail (Title, EventDescription, CategoryId)
 			N'Välkommen till en grillkväll utanför musikhuset där vi bjudit in lokala gitarrister att spela. Vi bjuder på korv och läsk.', 
 			1
 		),
-		
-			(N'Spelning med lokala trubadurer', 
+		(
+			N'Spelning med lokala trubadurer', 
 			N'Välkommen till en stämningsfull kväll fylld med musik och gemenskap. Våra lokala trubadurer bjuder på härliga toner långt in på småtimmarna.', 
 			1
-		);
+		),
+		(
+       	    N'Framtidens Älvsby',
+        	N'Välkommen till en öppen träff där vi tillsammans diskuterar idéer och förslag för Älvsbyns framtid. Alla är välkomna att delta!',
+        	4
+    	),
+    	(
+        	N'En hållbar vardag',
+        	N'Kom och lyssna på en inspirerande föreläsning om hur vi kan leva mer hållbart. Vi delar med oss av enkla tips för vardagen.',
+        	5
+    	),
+    	(
+        	N'Konstutställning med lokala konstnärer',
+        	N'Upptäck fina målningar och andra konstverk skapade av lokala konstnärer. Välkommen till en inspirerande utställning!',
+        	6
+    	),
+    	(
+        	N'Stickbio',
+        	N'Välkommen till stickbio! Ta med ditt handarbete till biografen och njut av en film. Vi  har lite extra belysning i salongen så att du kan handarbeta under  filmen.',
+			7
+    	),
+    	(
+        	N'Familjedag i parken',
+        	N'Ta med hela familjen på en rolig dag i parken! Det blir lekar, aktiviteter och gemenskap för både stora och små.',
+        	8
+    	),
+    	(
+        	N'Matmarknad på torget',
+        	N'Välkommen till en härlig matmarknad där du får smaka på lokala maträtter och upptäcka nya favoriter!',
+        	9
+    	);
 
 -- Organizer / Arrangör
 INSERT INTO Organizer (FullName, Email)
