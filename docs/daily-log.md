@@ -1,4 +1,23 @@
 
+## Daily Scrum – datum (format 28/10-26)
+
+### Framsteg mot sprintmålet
+- Gjort klart testdata och SQL-queries, det ligger i en pull request som väntar på review.
+### Arbete till nästa avstämning
+- Skapa en view och stored procedures.
+- Skapa första commit för HTML/CSS.
+- Uppdatera kanban-tavlan med prioritering och planning
+### Hinder eller risker
+- Vi är en sjuk i teamet idag.
+- Osäkra på hur vi skriver en trigger.
+### Hjälp eller beslut som behövs
+- Vi behöver granska vår pull request på SQL-queries och testdata.- 
+### Förändring i planen eller tavlan
+- Behöver lägga till kort löpande och uppdatera befintliga kort.
+- Planning poker/fibonacci
+
+---
+
 ## Daily Scrum – datum (format 21/10-26)
 
 ### Framsteg mot sprintmålet
