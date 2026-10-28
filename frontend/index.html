@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        <title>EventFlow</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <header class="site-header">
+    <h1>Älvsbyns Kommun</h1>
+
+        <nav aria-label="Huvudnavigation">
+            <ul class="nav-list">
+                <li><a href="#event">Evenemang</a></li>
+                <li><a href="#contact">Kontakta Oss</a></li>
+                <li><a href="#about">Om Oss</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section id="about">
+        <h2>Här kan du hitta evenemang i kommunen</h2>
+        <p>Hitta och anmäl dig till evenemang du är intresserad av.</p>
+    </section>
+
+    <section id="event">
+        <h2>Nuvarande evenemang</h2>
+            <div class="event-list">
+                <h3>Fotboll</h3>
+                <p>Kom och sparka boll på Älvsby Arena</p>
+                <a href="#booking">Boka</a>
+            </div>
+    </section>
+
+    <section id="booking">
+        <form>
+            <div>
+                <label for="name">Namn</label>
+                <input id="name" name="name" type="text" required>
+            </div>
+            <div>
+                <label for="email">E-post</label>
+                <input id="email" name="email" type="email" required>
+            </div>
+            <div>
+                <label for="groupsize">Antal</label>
+                <input id="groupsize" name="groupsize" type="number" min="1" max="10">
+            </div>
+            <button type="submit">Skicka bokning</button>
+        </form>
+    </section>
+    
+</main>
+    <footer id="contact">
+        <p>Kontakta oss på alvsbynskommun@example.se</p>
+    </footer>
+</body>
+</html>
