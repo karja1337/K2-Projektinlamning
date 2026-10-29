@@ -1,5 +1,5 @@
 
-## Daily Scrum – datum (format 28/10-26)
+## Daily Scrum – 28/10-26
 
 ### Framsteg mot sprintmålet
 - Gjort klart testdata och SQL-queries, det ligger i en pull request som väntar på review.
@@ -18,7 +18,7 @@
 
 ---
 
-## Daily Scrum – datum (format 21/10-26)
+## Daily Scrum – 21/10-26
 
 ### Framsteg mot sprintmålet
 - Vi har börjat sätta upp databasen.
@@ -36,11 +36,9 @@
 - Vi kommer behöva byta namn på vissa kolumner i databasen
 - Vi ska se till att kanban tavlan är uppdaterad
 
-
-
 ---
 
-## Daily Scrum – datum 14 /10-26
+## Daily Scrum – 14/10-26
 
 ### Framsteg mot sprintmålet
 - Gjort klart user stories och acceptanskriterier
@@ -65,8 +63,7 @@
 ### Förändring i planen eller tavlan
 - Ingen förändring just nu
 
-
-
+---
 
 ## Daily Scrum – 7/10-26
 

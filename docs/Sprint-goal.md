@@ -5,6 +5,7 @@ Vårt fokus är att börja programmera databasen och skriva verksamhetsdriva fr�
 Vi tror att det krävs för att lagra data säkert.
 
 Detta bekräftas när har vi använder testdata och kan se att vi kan lagra data på ett säkert sätt.
+
 ---
 ## Sprint goal 1: Planering
 
