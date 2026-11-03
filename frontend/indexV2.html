@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EventFlow</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <header class="site-header">
+    <h1>Älvsbyns Kommun</h1>
+
+        <nav aria-label="Huvudnavigation">
+            <ul class="nav-list">
+                <li><a href="#event">Evenemang</a></li>
+                <li><a href="#contact">Kontakta Oss</a></li>
+                <li><a href="#about">Om Oss</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section id="about">
+        <h2>Välkommen till Älvsbyn kommuns hemsida</h2>
+        <p>Här kan du läsa mer om oss som kommun, hitta olika sorters evenemang och anmäla dig och dina vänner till evenemang som passar dig.</p>
+    </section>
+
+    <section id="event">
+        <h2>Nuvarande evenemang</h2>
+            <div class="event-list">
+                <article class="event-card">
+                <h3>Fotboll</h3>
+                <p>Kom och sparka boll på Älvsby Arena</p>
+                <p>Datum: 2026-11-16</p>
+                <p>Tid: 16:00</p>
+                <a href="#booking">Boka</a>
+                </article>
+                
+                <article class="event-card">
+                    <h3>Spelning med lokala trubadurer</h3>
+                    <p>Välkommen till en stämningsfull kväll fylld med musik och gemenskap. Våra lokala trubadurer bjuder på härliga toner långt in på småtimmarna.</p>
+                    <p>Datum: 2026-11-17</p>
+                    <p>Tid: 19:00</p>
+                    <a href="#booking">Boka</a>
+                </article>
+
+                <article class="event-card">
+                    <h3>Pettson & Findus</h3>
+                    <p>Ta med familjen på en resa in i Pettson & Findus fantasifulla värld i denna magnifika teaterföreställning.</p>
+                    <p>Datum: 2026-11-15</p>
+                    <p>Tid: 13:00</p>
+                    <a href="#booking">Boka</a>
+                </article>
+            </div>
+    </section>
+    
+ <section id="booking">
+        <form>
+            <div>
+                <label for="name">Namn</label>
+                <input id="name" name="name" type="text" required>
+            </div>
+            <div>
+                <label for="email">E-post</label>
+                <input id="email" name="email" type="email" required>
+            </div>
+            <div>
+                <label for="groupsize">Antal</label>
+                <input id="groupsize" name="groupsize" type="number" min="1" max="10">               
+            </div>
+            
+            <button type="submit">Skicka bokning</button>
+        </form>
+    </section>
+   
+    <hr>
+    
+</main>
+    <footer id="contact">
+        <p>Kontakta oss på alvsbynskommun@example.se</p>
+    </footer>
+</body>
+</html>
