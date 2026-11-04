@@ -28,22 +28,41 @@ document.querySelectorAll('.event-card').forEach(card =>{
         modal.setAttribute('aria-hidden', 'false');
     });
 });
+
 // Form functionality
+
+//variables from selected query
 
 const form = document.querySelector("#booking");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const phonenumberInput= document.querySelector("#phonenumber");
-const eventInput = document.querySelector("#eventbooking");
-const groupsizeInput = document.querySelector("#groupsize");
+const eventSelect = document.querySelector("#eventbooking");
+const groupsizeSelect = document.querySelector("#groupsize");
+
+//feedback-paragraph for input validation/error
 const feedback = document.querySelector("#booking-feedback");
 
-console.log(nameInput);
-console.log(emailInput);
-console.log(phonenumberInput);
-console.log(eventInput);
-console.log(groupsizeInput);
-console.log(feedback);
+
+
+form.addEventListener("submit", booking => {
+  booking.preventDefault();
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phonenumber = phonenumberInput.value.trim();
+    const event = eventSelect.value;
+    const groupsize = groupsizeSelect.value;
+    
+    //Test in console
+    console.log(name);
+    console.log(email);
+    console.log(phonenumber);
+    console.log(event);
+    console.log(groupsize);
+    return;
+    
+});
+
 
 // koppla app.js med defer --klart--
 
@@ -51,13 +70,11 @@ console.log(feedback);
 
 // kontrollera referenserna i Console --klart--
 
-// lyssna på formulärets submit
+// lyssna på formulärets submit --klart--
 
-// stoppa omladdning
+// stoppa omladdning --klart--
 
-// lyssna på formulärets submit
-
-// läs och normalisera värden
+// läs och normalisera värden --klart--
 
 // validera
 
