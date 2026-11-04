@@ -115,16 +115,42 @@
  <section id="booking">
         <form>
             <div>
-                <label for="name">Namn</label>
+                <label for="name">Namn:</label>
                 <input id="name" name="name" type="text" required>
             </div>
             <div>
-                <label for="email">E-post</label>
+                <label for="email">E-post:</label>
                 <input id="email" name="email" type="email" required>
             </div>
             <div>
-                <label for="groupsize">Antal</label>                   
-                <input id="groupsize" name="groupsize" type="number" min="1" max="10">       
+                <label for="phonenumber">Tel-nummer:</label>
+                <input id="phonenumber" name="phonenumber" type="tel" required>
+            </div>
+             <div>
+                <label for="event">Evenemang:</label>
+                <select id="" name="event">
+                    <option value="">Välj event</option>
+                    <option value="Fotboll">Fotboll</option>
+                    <option value="Spelning-med-lokala-trubadurer">Spelning med lokala trubadurer</option>
+                    <option value="Pettson-&-Findus">Pettson & Findus</option>
+                </select>
+
+            <div>
+                <label for="groupsize">Antal:</label>
+                <select id="groupsize" name="groupsize">
+                    <option value="">Välj antal</option>
+                    <option value="groupsize-1">1</option>
+                    <option value="groupsize-2">2</option>
+                    <option value="groupsize-3">3</option>
+                    <option value="groupsize-4">4</option>
+                    <option value="groupsize-5">5</option>
+                    <option value="groupsize-6">6</option>
+                    <option value="groupsize-7">7</option>
+                    <option value="groupsize-8">8</option>
+                    <option value="groupsize-9">9</option>
+                    <option value="groupsize-10">10</option>
+                </select>
+                      
             </div>
             
             <button type="submit">Skicka bokning</button>
