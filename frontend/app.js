@@ -1,28 +1,3 @@
-
-
-
-// koppla app.js med defer
-
-//  Välj DOM-element
-
-// kontrollera referenserna i Console
-
-// lyssna på formulärets submit
-
-// stoppa omladdning
-
-// lyssna på formulärets submit
-
-// läs och normalisera värden
-
-// validera
-
-// visa fel eller bekräftelse
-
-// uppdatera CSS-klasser
-
-// testa efter varje steg
-
 // modal functionality
 const modal = document.getElementById('event-modal');
 const modalImg = document.getElementById('modal-img');
@@ -53,4 +28,41 @@ document.querySelectorAll('.event-card').forEach(card =>{
         modal.setAttribute('aria-hidden', 'false');
     });
 });
+// Form functionality
 
+const form = document.querySelector("#booking");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const phonenumberInput= document.querySelector("#phonenumber");
+const eventInput = document.querySelector("#eventbooking");
+const groupsizeInput = document.querySelector("#groupsize");
+const feedback = document.querySelector("#booking-feedback");
+
+console.log(nameInput);
+console.log(emailInput);
+console.log(phonenumberInput);
+console.log(eventInput);
+console.log(groupsizeInput);
+console.log(feedback);
+
+// koppla app.js med defer --klart--
+
+//  Välj DOM-element --klart--
+
+// kontrollera referenserna i Console --klart--
+
+// lyssna på formulärets submit
+
+// stoppa omladdning
+
+// lyssna på formulärets submit
+
+// läs och normalisera värden
+
+// validera
+
+// visa fel eller bekräftelse
+
+// uppdatera CSS-klasser
+
+// testa efter varje steg
