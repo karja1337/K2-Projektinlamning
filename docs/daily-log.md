@@ -1,4 +1,22 @@
 
+## Daily Scrum – 4/11-26
+### Framsteg mot sprintmålet
+- Kanban-tavla uppdaterad, sorterad och planerad.
+- Planning poker/Fibonacci.
+- HTML har påbörjats och fungerar som förväntat.
+- Hemsidan är responsiv med CSS och bilder.
+### Arbete till nästa avstämning
+- Skapa ett fungerande formulär.
+- Skapa en detaljvy av ett valt evenemang.
+### Hinder eller risker
+- Inga.
+### Hjälp eller beslut som behövs
+- Pull Request om CSS behöver granskas.
+### Förändring i planen eller tavlan
+- Kort #7 och #8 flyttas till näst Sprint Goal, JavaScript.
+
+---
+
 ## Daily Scrum – 28/10-26
 
 ### Framsteg mot sprintmålet
