@@ -1,4 +1,14 @@
 # Sprint Goals
+## Sprint goal 4: JavaScript
+Vårt fokus är att bygga ett fungerande bokningsformulär som tar emot värden och skriver ut en bekräftelse på bokning.
+Vi ska skapa en detaljvy i form av en pop-up med information om evenemangen, man ska också komma åt bokningsformuläret därifrån.
+
+Det krävs för att besökare ska kunna se information om evenemanget och anmäla sig till valt evenemang.
+
+Detta bekräftas när vi testar formuläret med testdata och rätt information skrivs ut som en bekräftelse.
+
+1 vecka
+
 ## Sprint goal 3: Frontend
 Vårt fokus är att börja sätta upp HTML och CSS för vårt projekt utifrån uppgiftskraven.
 
