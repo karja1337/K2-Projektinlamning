@@ -30,8 +30,11 @@ const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-desc');
 const modalDate = document.getElementById('modal-date');
 const modalTime = document.getElementById('modal-time');
+const modalLocation = document.getElementById('modal-location');
+const modalOrganizer = document.getElementById('modal-organizer');
 const closeModalBtn = document.getElementById('modal-close-btn');
 
+// forEach loop to add click event listener to each event card
 document.querySelectorAll('.event-card').forEach(card =>{
     card.addEventListener('click', function(){
         // Get the data from the clicked card
@@ -40,6 +43,8 @@ document.querySelectorAll('.event-card').forEach(card =>{
         const desc = card.querySelector('.event-card-desc').textContent;
         const date = card.querySelector('.event-card-date').textContent;
         const time = card.querySelector('.event-card-time').textContent;
+        const location = card.querySelector('.event-card-location').textContent;
+        const organizer = card.querySelector('.event-card-organizer').textContent;
 
         // add modal content
         modalImg.src = img;
@@ -47,10 +52,18 @@ document.querySelectorAll('.event-card').forEach(card =>{
         modalDesc.textContent = desc;
         modalDate.textContent = date;
         modalTime.textContent = time;
+        modalLocation.textContent = location;
+        modalOrganizer.textContent = organizer;
 
         //open the modal
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
     });
+});
+
+// close the modal box when the close button is clicked
+closeModalBtn.addEventListener('click', function(){
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
 });
 
