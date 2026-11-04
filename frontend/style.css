@@ -169,3 +169,36 @@ footer a:hover {
         width: auto;
     }
 }
+
+
+/* Modal box css */
+#event-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#event-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
