@@ -48,7 +48,8 @@ main {
 }
 
 /* Om Oss */
-#about, #event {
+#about, 
+#event {
     padding: 0rem 1rem;
     margin-bottom: 2rem;
 }
@@ -70,7 +71,8 @@ main {
     
     flex-direction: column;
     padding: 1rem;
-    border: 2px dashed #f3b263;
+    border: 2px solid #f3b263;
+    border-radius: 10px;
     background: white;
 }
 
@@ -80,17 +82,36 @@ main {
     border-radius: 10px;
 }
 
+.modal-img {
+    object-fit: cover;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
 .event-card-img img {
     width: 100%;
     height: 50%;
     justify-content: center;
 }
 
-.event-card-title {
+.event-card-title, 
+.modal-title {
     margin: 5px;
 }
 
-.event-card-date, .event-card-time, .event-card-location, .event-card-organizer {
+.event-card:hover {
+    .event-card-title {
+        text-decoration: underline;
+    }
+
+    border: 2px solid #e4a457;
+    background-color: #ffebd3;
+}
+
+.event-card-date, 
+.event-card-time, 
+.event-card-location, 
+.event-card-organizer {
     box-sizing: border-box;
     width: fit-content;
     padding: 1px 5px;
@@ -99,7 +120,7 @@ main {
 }
 
 .event-card-date {
-    border: 2px solid rgb(238, 194, 141);
+    border: 2px solid #eec28d;
     background-color: bisque;
 }
 
@@ -108,8 +129,22 @@ main {
     background-color: #e2fa8a;
 }
 
-.event-card-desc {
+.event-card-location {
+    border: 2px solid #6495d4;
+    background-color: #aee1eb;
+}
+
+.event-card-organizer {
+    border: 2px solid #a6ac52;
+    background-color: #e1e29a;
+}
+
+.event-card-desc, 
+.modal-desc {
     margin: 0px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
 }
 
 /* Footer */
@@ -133,6 +168,85 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     color: #ff0000;
+}
+
+/* Modal box css */
+#event-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#event-modal.active {
+    display: flex;
+}
+
+.event-card {
+    cursor: pointer;
+}
+
+.event-card .event-card-location {
+    display: none;
+}
+
+.event-card .event-card-organizer {
+    display: none;
+}
+
+
+
+/* Modal style */
+.modal-meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    font-size: 13px;
+}
+
+#booking fieldset {
+    padding: 5px 10px;
+}
+
+#booking button {
+    padding: 2px 3px;
+    margin: 10px 5px 5px 0px;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 500px;
+    min-width: 250px;
+    width: 90%;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+}
+
+.modal-close {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1.0;
+    cursor: pointer;
+    opacity: 60%;
+}
+
+.modal-close:hover {
+    opacity: 90%;
 }
 
 
@@ -165,65 +279,13 @@ footer a:hover {
         max-width: 300px;
     }
 
-    .event-card-img {
+    .event-card-img, .modal-img {
         width: auto;
     }
-}
 
+    .modal-img {
+        width: 100%;
+        height: auto;
+    }
 
-/* Modal box css */
-#event-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-#event-modal.active {
-    display: flex;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-
-}
-
-.modal-img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-.modal-close {
-    float: right;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.event-card {
-    cursor: pointer;
-}
-.event-card .event-card-location {
-    display: none;
-}
-.event-card .event-card-organizer {
-    display: none;
-}
-.event-card-location {
-    border: 2px solid #6495d4;
-    background-color: #aee1eb;
-}
-.event-card-organizer {
-    border: 2px solid #a6ac52;
-    background-color: #e1e29a;
 }
