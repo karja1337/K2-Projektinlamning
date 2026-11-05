@@ -36,13 +36,22 @@ document.querySelectorAll('.event-card').forEach(card =>{
     });
 });
 
-
+// booking form variables
+const bookingBtn = document.getElementById('booking-btn');
+const bookingForm = document.getElementById('booking-form');
 // close the modal box when the close button is clicked
 closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
+    bookingForm.classList.remove('active');
+    bookingBtn.style.display = 'block';
 });
 
+// open the booking form when the booking button is clicked
+
+bookingBtn.addEventListener('click', function(){
+    bookingForm.classList.add('active');
+    
+});
 
 // Form functionality
 
@@ -68,14 +77,18 @@ form.addEventListener("submit", booking => {
     const event = eventSelect.value;
     const groupsize = groupsizeSelect.value;
     
-    //Test in console
-    console.log(name);
-    console.log(email);
-    console.log(phonenumber);
-    console.log(event);
-    console.log(groupsize);
-    return;
     
+    if (name === "" || email === "" || phonenumber === "" || event === "" || groupsize === "") {
+        feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
+        feedback.classList.add("error");
+        feedback.classList.remove("success");
+        return;
+    }
+    //Här kommer bekräftelsen
+    feedback.textContent = 
+       `Tack för din bokning ${name}! 
+       Du har bokat ${groupsize} plats(er) till ${event}.
+       En bekräftelse skickas till ${email}.`;
 });
 
 
