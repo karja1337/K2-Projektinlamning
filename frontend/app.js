@@ -1,28 +1,3 @@
-
-
-
-// koppla app.js med defer
-
-//  Välj DOM-element
-
-// kontrollera referenserna i Console
-
-// lyssna på formulärets submit
-
-// stoppa omladdning
-
-// lyssna på formulärets submit
-
-// läs och normalisera värden
-
-// validera
-
-// visa fel eller bekräftelse
-
-// uppdatera CSS-klasser
-
-// testa efter varje steg
-
 // modal functionality
 const modal = document.getElementById('event-modal');
 const modalImg = document.getElementById('modal-img');
@@ -61,9 +36,66 @@ document.querySelectorAll('.event-card').forEach(card =>{
     });
 });
 
+
 // close the modal box when the close button is clicked
 closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
 });
+
+
+// Form functionality
+
+//variables from selected query
+
+const form = document.querySelector("#booking");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const phonenumberInput= document.querySelector("#phonenumber");
+const eventSelect = document.querySelector("#eventbooking");
+const groupsizeSelect = document.querySelector("#groupsize");
+
+//feedback-paragraph for input validation/error
+const feedback = document.querySelector("#booking-feedback");
+
+
+
+form.addEventListener("submit", booking => {
+  booking.preventDefault();
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phonenumber = phonenumberInput.value.trim();
+    const event = eventSelect.value;
+    const groupsize = groupsizeSelect.value;
+    
+    //Test in console
+    console.log(name);
+    console.log(email);
+    console.log(phonenumber);
+    console.log(event);
+    console.log(groupsize);
+    return;
+    
+});
+
+
+// koppla app.js med defer --klart--
+
+//  Välj DOM-element --klart--
+
+// kontrollera referenserna i Console --klart--
+
+// lyssna på formulärets submit --klart--
+
+// stoppa omladdning --klart--
+
+// läs och normalisera värden --klart--
+
+// validera
+
+// visa fel eller bekräftelse
+
+// uppdatera CSS-klasser
+
+// testa efter varje steg
 
