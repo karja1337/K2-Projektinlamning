@@ -19,8 +19,51 @@
             <span id="modal-date" class="event-card-date"></span>
             <span id="modal-time" class="event-card-time"></span>
             <span id="modal-location" class="event-card-location"></span>
-            <span id="modal-organizer" class="event-card-organizer"></span>
+            <span id="modal-organizer" class="event-card-organizer"></span>            
         </div>
+        <section id="booking">
+            <form>
+                <div>
+                    <label for="name">Namn:</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+                <div>
+                    <label for="email">E-post:</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+                <div>
+                    <label for="phonenumber">Tel-nummer:</label>
+                    <input id="phonenumber" name="phonenumber" type="tel" required>
+                </div>
+                <div>
+                    <label for="eventbooking">Evenemang:</label>
+                    <select id="eventbooking" name="eventbooking">
+                        <option value="">Välj event</option>
+                        <option value="Fotboll">Fotboll</option>
+                        <option value="Spelning med lokala trubadurer">Spelning med lokala trubadurer</option>
+                        <option value="Pettson & Findus">Pettson & Findus</option>
+                    </select>
+
+                <div>
+                    <label for="groupsize">Antal:</label>
+                    <select id="groupsize" name="groupsize">
+                        <option value="">Välj antal</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>                        
+                </div>            
+                <button type="submit">Skicka bokning</button>
+            </form>
+        <p id="booking-feedback" role="status"></p> 
+        </section>
     </div>
 </div>
 <body>
@@ -58,7 +101,7 @@
                     <p class="event-card-date">Datum: 2026-11-16</p>
                     <p class="event-card-time">Tid: 16:00</p>
                     <p class="event-card-location">Plats: Älvsby Arena</p>
-                    <p class="event-card-organizer">Arrangör: Paul Vik</p>
+                    <p class="event-card-organizer">Arrangör: Paul Vik</p>                    
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
                 
@@ -122,56 +165,8 @@
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
             </div>
-    </section>
-    
- <section id="booking">
-        <form>
-            <div>
-                <label for="name">Namn:</label>
-                <input id="name" name="name" type="text" required>
-            </div>
-            <div>
-                <label for="email">E-post:</label>
-                <input id="email" name="email" type="email" required>
-            </div>
-            <div>
-                <label for="phonenumber">Tel-nummer:</label>
-                <input id="phonenumber" name="phonenumber" type="tel" required>
-            </div>
-             <div>
-                <label for="eventbooking">Evenemang:</label>
-                <select id="eventbooking" name="eventbooking">
-                    <option value="">Välj event</option>
-                    <option value="Fotboll">Fotboll</option>
-                    <option value="Spelning-med-lokala-trubadurer">Spelning med lokala trubadurer</option>
-                    <option value="Pettson-&-Findus">Pettson & Findus</option>
-                </select>
-
-            <div>
-                <label for="groupsize">Antal:</label>
-                <select id="groupsize" name="groupsize">
-                    <option value="">Välj antal</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-                      
-            </div>
-            
-            <button type="submit">Skicka bokning</button>
-        </form>
-        <p id="booking-feedback" role="status"></p>        
-    </section>
-   
-    <hr>
-    
+    </section>       
+    <hr>    
 </main>
     <footer id="contact">
         <p>Kontakta oss på <a href="">hej@alvsbynskommun.se</a></p>
