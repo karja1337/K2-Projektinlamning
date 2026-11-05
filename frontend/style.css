@@ -90,7 +90,7 @@ main {
     margin: 5px;
 }
 
-.event-card-date, .event-card-time {
+.event-card-date, .event-card-time, .event-card-location, .event-card-organizer {
     box-sizing: border-box;
     width: fit-content;
     padding: 1px 5px;
@@ -201,4 +201,29 @@ footer a:hover {
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
+}
+
+.modal-close {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.event-card {
+    cursor: pointer;
+}
+.event-card .event-card-location {
+    display: none;
+}
+.event-card .event-card-organizer {
+    display: none;
+}
+.event-card-location {
+    border: 2px solid #6495d4;
+    background-color: #aee1eb;
+}
+.event-card-organizer {
+    border: 2px solid #a6ac52;
+    background-color: #e1e29a;
 }
