@@ -76,6 +76,10 @@ form.addEventListener("submit", booking => {
         return;
     }
     //Här kommer bekräftelsen
+    feedback.textContent = 
+       `Tack för din bokning ${name}! 
+       Du har bokat ${groupsize} plats(er) till ${event}.
+       En bekräftelse skickas till ${email}.`;
 });
 
 
