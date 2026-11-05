@@ -248,6 +248,22 @@ footer a:hover {
 .modal-close:hover {
     opacity: 90%;
 }
+/*css för länken till formuläret */
+#booking-btn {
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 7px;
+    padding: 1px 5px;
+    border: 2px solid #a6ac52;
+    background-color: #e1e29a;
+}
+/* döljer formuläret tills användaren klickar på boka-knappen */
+#booking-form {
+    display: none !important;
+}
+#booking-form.active {
+    display: block !important;
+}
 
 
 /* Desktop / Datorkskärm eller större skärmar */
