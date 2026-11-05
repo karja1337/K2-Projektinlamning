@@ -76,10 +76,21 @@ form.addEventListener("submit", booking => {
         return;
     }
     //Här kommer bekräftelsen
+    if (groupsize === "1"){
     feedback.textContent = 
        `Tack för din bokning ${name}! 
-       Du har bokat ${groupsize} plats(er) till ${event}.
+       Du har bokat ${groupsize} plats till ${event}.
        En bekräftelse skickas till ${email}.`;
+       feedback.classList.add("success");
+        feedback.classList.remove("error");
+       return;
+    }    
+    feedback.textContent = 
+    `Tack för din bokning ${name}! 
+    Du har bokat ${groupsize} platser till ${event}.
+    En bekräftelse skickas till ${email}.`;
+    feedback.classList.add("success");
+    feedback.classList.remove("error");
 });
 
 
@@ -95,11 +106,11 @@ form.addEventListener("submit", booking => {
 
 // läs och normalisera värden --klart--
 
-// validera
+// validera --klart--
 
-// visa fel eller bekräftelse
+// visa fel eller bekräftelse --klart--
 
-// uppdatera CSS-klasser
+// uppdatera CSS-klasser 
 
 // testa efter varje steg
 
