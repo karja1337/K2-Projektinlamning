@@ -110,7 +110,7 @@ form.addEventListener("submit", booking => {
 
 // visa fel eller bekräftelse --klart--
 
-// uppdatera CSS-klasser 
+// uppdatera CSS-klasser --klart--
 
-// testa efter varje steg
+// testa efter varje steg --klart--
 
