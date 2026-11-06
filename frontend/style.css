@@ -1,10 +1,5 @@
 /* Mobile-First */
 
-:root {
-    --header-bg: bisque;
-    --footer-bg: bisque;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +14,7 @@ body {
 
 .site-header {
     padding: 1rem;
-    background-color: var(--header-bg);
+    background-color: bisque;
 }
 
 main {
@@ -29,7 +24,44 @@ main {
     padding: 1rem 0rem;
 }
 
-/* Navigation / Navigering */
+/* Footer */
+footer {
+    flex: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
+    box-sizing: border-box;
+    padding: 3rem 2rem 4rem;
+    margin-top: 1rem;
+    background-color: bisque;
+}
+
+footer a {
+    text-decoration: none;
+    color: #6e3200;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+
+/* "Ta mig till topp"-link */
+#top-anchor a {
+    text-decoration: none;
+    color: #2c4970;
+    float: right;
+}
+
+#top-anchor a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* Navigation */
 .nav-list {
     flex-direction: row;
     list-style: none;
@@ -47,24 +79,34 @@ main {
     text-decoration: underline;
 }
 
+
 /* Om Oss */
-#about, 
-#event {
+#about {
     padding: 0rem 1rem;
     margin-bottom: 2rem;
 }
 
-/* Event / Evenemang */
+
+/* Event */
+#event {
+    padding: 0rem 1rem;
+    margin-bottom: 5rem;
+}
+
 #event h2 {
     margin: 0.5rem;
 }
 
+
+/* Event list */
 .event-list {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
+
+/* Event cards */
 .event-card {
     box-sizing: border-box;
     display: flex;
@@ -79,12 +121,6 @@ main {
 .event-card-img {
     object-fit: cover;
     max-height: 120px;
-    border-radius: 10px;
-}
-
-.modal-img {
-    object-fit: cover;
-    max-height: 200px;
     border-radius: 10px;
 }
 
@@ -152,30 +188,8 @@ main {
     overflow: hidden; 
 }
 
-/* Footer */
-footer {
-    flex: 1;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    
-    box-sizing: border-box;
-    padding: 3rem 2rem 4rem;
-    background-color: var(--footer-bg);
-}
 
-footer a {
-    text-decoration: none;
-    color: #000;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    color: #ff0000;
-}
-
-/* Modal box css */
+/* Modal box placement, hiding elements */
 #event-modal {
     position: fixed;
     top: 0;
@@ -205,23 +219,13 @@ footer a:hover {
 }
 
 
-/* Modal style */
-#booking fieldset {
-    padding: 5px 10px;
-}
-
-#booking button {
-    padding: 2px 3px;
-    margin: 10px 5px 5px 0px;
-}
-
+/* Modal box style */
 .modal-meta {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 1rem;
-
+    margin-bottom: 1.5rem;
     font-size: 13px;
 }
 
@@ -239,6 +243,9 @@ footer a:hover {
 }
 
 .modal-img {
+    object-fit: cover;
+    max-height: 250px;
+    border-radius: 10px;
     width: 100%;
     height: auto;
 }
@@ -269,42 +276,45 @@ footer a:hover {
     margin: 10px 5px 5px 0px;
 }
 
+/* Error feedback */
 #booking-feedback.success {
     color: #176b4d;
 }
+
 #booking-feedback.error {
     color: #b42318;
 }
-/*css för länken till formuläret */
+
 #booking-btn {
-    box-sizing: border-box;
+    box-sizing: content-box;
     width: fit-content;
     
-    font-weight: 700;
     color: black;
     text-decoration: none;
     border-radius: 7px;
-    padding: 5px 7px;
-    border: 2px solid #517ab1;
-    background-color: #b4dff3;
+    padding: 6px 16px;
+    border: 2px solid #303030;
+    background-color: #e7e7e7;
 }
 
 #booking-btn:hover {
     background-color: white;
     border-color: #6495d4;
     color: #2c4970;
+    text-decoration: underline;
 }
 
-/* döljer formuläret tills användaren klickar på boka-knappen */
+/* Hides booking form until user clicks on booking link. */
 #booking-form {
     display: none !important;
 }
+
 #booking-form.active {
     display: block !important;
 }
 
 
-/* Desktop / Datorkskärm eller större skärmar */
+/* Desktop Media Query */
 @media (min-width: 750px) {
     .site-header {
         display: flex;
@@ -341,5 +351,4 @@ footer a:hover {
         width: 100%;
         height: auto;
     }
-
 }
