@@ -37,7 +37,7 @@
 
                     <div>
                         <label for="phonenumber">Tel-nummer:</label>
-                        <input id="phonenumber" name="phonenumber" type="tel" required>
+                        <input id="phonenumber" name="phonenumber" type="tel" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" required>
                     </div>
 
                     <div>
@@ -45,8 +45,10 @@
                         <select id="eventbooking" name="eventbooking">
                             <option value="">Välj evenemang</option>
                             <option value="Fotboll">Fotboll</option>
-                            <option value="Spelning med lokala trubadurer">Spelning med lokala trubadurer</option>
+                            <option value="Grillkväll med lokala gitarrspelare">Grillkväll med lokala gitarrspelare</option>
                             <option value="Pettson & Findus">Pettson & Findus</option>
+                            <option value="Madicken">Madicken</option>
+                            <option value="Gemensam hockeykväll">Gemensam hockeykväll</option>
                         </select>
                     </div>
 
@@ -108,25 +110,27 @@
                         Kom och sparka boll på Älvsby Arena
                     </p>
 
-                    <p class="event-card-date">Datum: 2026-11-16</p>
-                    <p class="event-card-time">Tid: 16:00</p>
-                    <p class="event-card-location">Plats: Älvsby Arena</p>
-                    <p class="event-card-organizer">Arrangör: Paul Vik</p>                    
+                    <p class="event-card-date">Datum: 2026-11-17</p>
+                    <p class="event-card-time">Tid: 19:00</p>
+                    <p class="event-card-location">Plats: Musikhuset</p>
+                    <p class="event-card-organizer">Arrangör: Felicia Dal</p>
+                    <p class="event-card-category">Kategori: Sport</p>                    
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
                 
                 <article class="event-card">
                     <img src="images/placeholder_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Spelning med lokala trubadurer</h3>
+                    <h3 class="event-card-title">Madicken</h3>
 
                     <p class="event-card-desc">
-                        Välkommen till en stämningsfull kväll fylld med musik och gemenskap. Våra lokala trubadurer bjuder på härliga toner långt in på småtimmarna.
+                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
                     </p>
 
-                    <p class="event-card-date">Datum: 2026-11-17</p>
-                    <p class="event-card-time">Tid: 19:00</p>
+                    <p class="event-card-date">Datum: 2026-11-16</p>
+                    <p class="event-card-time">Tid: 16:00</p>
                     <p class="event-card-location">Plats: Folketshus</p>
-                    <p class="event-card-organizer">Arrangör: Thomas Falk</p>
+                    <p class="event-card-organizer">Arrangör: Paul Vik</p>
+                    <p class="event-card-category">Kategori: Teater</p>
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
 
@@ -140,42 +144,93 @@
 
                     <p class="event-card-date">Datum: 2026-11-15</p>
                     <p class="event-card-time">Tid: 13:00</p>
-                    <p class="event-card-location">Plats: Folketshus</p>
+                    <p class="event-card-location">Plats: Älvsby arena</p>
+                    <p class="event-card-organizer">Arrangör: Paul Vik</p>
+                    <p class="event-card-category">Kategori: Teater</p>
+                    <!-- <a href="#booking">Boka</a> -->
+                </article>
+
+                <article class="event-card">
+                    <img src="images/placeholder_cover.jpg" class="event-card-img">
+                    <h3 class="event-card-title">Madicken</h3>
+
+                    <p class="event-card-desc">
+                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
+                    </p>
+
+                    <p class="event-card-date">Datum: 2026-11-15</p>
+                    <p class="event-card-time">Tid: 16:00</p>
+                    <p class="event-card-location">Plats: Folkets hus</p>
+                    <p class="event-card-organizer">Arrangör: Paul Vik</p>
+                    <p class="event-card-category">Kategori: Teater</p>
+                    <!-- <a href="#booking">Boka</a> -->
+                </article>
+
+                <article class="event-card">
+                    <img src="images/placeholder_cover.jpg" class="event-card-img">
+                    <h3 class="event-card-title">Gemensam hockeykväll</h3>
+
+                    <p class="event-card-desc">
+                        Välkommen till en gemensam hockeykväll utanför Älvsby Arena. Vi tittar gemensamt på kvällens hockeymatch på storbild. Ta med något att sitta på!
+                    </p>
+
+                    <p class="event-card-date">Datum: 2026-11-15</p>
+                    <p class="event-card-time">Tid: 19:00</p>
+                    <p class="event-card-location">Plats: Folkets hus</p>
                     <p class="event-card-organizer">Arrangör: Thomas Falk</p>
+                    <p class="event-card-category">Kategori: Sport</p>
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
 
                 <article class="event-card">
                     <img src="images/placeholder_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Titel på evenemang</h3>
+                    <h3 class="event-card-title">Gemensam hockeykväll</h3>
 
                     <p class="event-card-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod error aperiam voluptas.
+                        Välkommen till en gemensam hockeykväll utanför Älvsby Arena. Vi tittar gemensamt på kvällens hockeymatch på storbild. Ta med något att sitta på!
                     </p>
 
-                    <p class="event-card-date">Datum: 2026-00-00</p>
-                    <p class="event-card-time">Tid: 00:00</p>
-                    <p class="event-card-location">Plats: Folketshus</p>
+                    <p class="event-card-date">Datum: 2026-11-17</p>
+                    <p class="event-card-time">Tid: 16:00</p>
+                    <p class="event-card-location">Plats: Torget</p>
+                    <p class="event-card-organizer">Arrangör: Anita Holm</p>
+                    <p class="event-card-category">Kategori: Sport</p>
+                    <!-- <a href="#booking">Boka</a> -->
+                </article>
+                               
+                <article class="event-card">
+                    <img src="images/placeholder_cover.jpg" class="event-card-img">
+                    <h3 class="event-card-title">Grillkväll med lokala gitarrspelare</h3>
+
+                    <p class="event-card-desc">
+                        Välkommen till en grillkväll utanför musikhuset där vi bjudit in lokala gitarrister att spela. Vi bjuder på korv och läsk.
+                    </p>
+
+                    <p class="event-card-date">Datum: 2026-11-20</p>
+                    <p class="event-card-time">Tid: 14:00</p>
+                    <p class="event-card-location">Plats: Stora salen</p>
                     <p class="event-card-organizer">Arrangör: Ulrika Hammar</p>
+                    <p class="event-card-category">Kategori: Musik</p>
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
 
                 <article class="event-card">
                     <img src="images/placeholder_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Titel på evenemang</h3>
+                    <h3 class="event-card-title">Madicken</h3>
 
                     <p class="event-card-desc">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod error aperiam voluptas.
+                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
                     </p>
 
-                    <p class="event-card-date">Datum: 2026-00-00</p>
-                    <p class="event-card-time">Tid: 00:00</p>
-                    <p class="event-card-location">Plats: Folketshus</p>
-                    <p class="event-card-organizer">Arrangör: Felicia Dal</p>
+                    <p class="event-card-date">Datum: 2026-11-20</p>
+                    <p class="event-card-time">Tid: 19:00</p>
+                    <p class="event-card-location">Plats: Älvsby arena</p>
+                    <p class="event-card-organizer">Arrangör: Ulrika Hammar</p>
+                    <p class="event-card-category">Kategori: Teater</p>
                     <!-- <a href="#booking">Boka</a> -->
                 </article>
             </div>
-    </section>       
+    </section>         
     <hr>    
 </main>
     <footer id="contact">
