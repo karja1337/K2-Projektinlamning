@@ -48,13 +48,17 @@ main {
 }
 
 /* Om Oss */
-#about, 
-#event {
+#about {
     padding: 0rem 1rem;
     margin-bottom: 2rem;
 }
 
 /* Event / Evenemang */
+#event {
+    padding: 0rem 1rem;
+    margin-bottom: 5rem;
+}
+
 #event h2 {
     margin: 0.5rem;
 }
@@ -84,7 +88,7 @@ main {
 
 .modal-img {
     object-fit: cover;
-    max-height: 200px;
+    max-height: 250px;
     border-radius: 10px;
 }
 
@@ -162,17 +166,30 @@ footer {
     
     box-sizing: border-box;
     padding: 3rem 2rem 4rem;
+    margin-top: 1rem;
     background-color: var(--footer-bg);
 }
 
 footer a {
     text-decoration: none;
-    color: #000;
+    color: #6e3200;
 }
 
 footer a:hover {
     text-decoration: underline;
-    color: #ff0000;
+    color: #000;
+}
+
+/* "Ta mig till topp"-link */
+#top-anchor a {
+    text-decoration: none;
+    color: #2c4970;
+    float: right;
+}
+
+#top-anchor a:hover {
+    text-decoration: underline;
+    color: #000;
 }
 
 /* Modal box css */
@@ -206,21 +223,12 @@ footer a:hover {
 
 
 /* Modal style */
-#booking fieldset {
-    padding: 5px 10px;
-}
-
-#booking button {
-    padding: 2px 3px;
-    margin: 10px 5px 5px 0px;
-}
-
 .modal-meta {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     font-size: 13px;
 }
@@ -277,16 +285,16 @@ footer a:hover {
 }
 /*css för länken till formuläret */
 #booking-btn {
-    box-sizing: border-box;
+    box-sizing: content-box;
     width: fit-content;
     
-    font-weight: 700;
+    /* font-size: 20px; */
     color: black;
     text-decoration: none;
     border-radius: 7px;
-    padding: 5px 7px;
-    border: 2px solid #517ab1;
-    background-color: #b4dff3;
+    padding: 6px 16px;
+    border: 2px solid #303030;
+    background-color: #e7e7e7;
 }
 
 #booking-btn:hover {
