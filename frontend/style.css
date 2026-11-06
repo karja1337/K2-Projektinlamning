@@ -111,7 +111,8 @@ main {
 .event-card-date, 
 .event-card-time, 
 .event-card-location, 
-.event-card-organizer {
+.event-card-organizer,
+.event-card-category {
     box-sizing: border-box;
     width: fit-content;
     padding: 1px 5px;
@@ -138,6 +139,10 @@ main {
 .event-card-organizer {
     border: 2px solid #a6ac52;
     background-color: #e1e29a;
+}
+.event-card-category {
+    border: 2px solid #b42318;
+    background-color: #f3b263;
 }
 
 .event-card-desc {

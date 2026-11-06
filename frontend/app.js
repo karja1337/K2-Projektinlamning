@@ -8,6 +8,7 @@ const modalTime = document.getElementById('modal-time');
 const modalLocation = document.getElementById('modal-location');
 const modalOrganizer = document.getElementById('modal-organizer');
 const closeModalBtn = document.getElementById('modal-close-btn');
+const modalCategory = document.getElementById('modal-category');
 
 // forEach loop to add click event listener to each event card
 document.querySelectorAll('.event-card').forEach(card =>{
@@ -20,6 +21,7 @@ document.querySelectorAll('.event-card').forEach(card =>{
         const time = card.querySelector('.event-card-time').textContent;
         const location = card.querySelector('.event-card-location').textContent;
         const organizer = card.querySelector('.event-card-organizer').textContent;
+        const category = card.querySelector('.event-card-category').textContent;
 
         // add modal content
         modalImg.src = img;
@@ -29,6 +31,7 @@ document.querySelectorAll('.event-card').forEach(card =>{
         modalTime.textContent = time;
         modalLocation.textContent = location;
         modalOrganizer.textContent = organizer;
+        modalCategory.textContent = category;
 
         //open the modal
         modal.classList.add('active');
