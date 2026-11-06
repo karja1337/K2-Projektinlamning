@@ -200,7 +200,6 @@ footer a:hover {
 }
 
 
-
 /* Modal style */
 #booking fieldset {
     padding: 5px 10px;
@@ -253,6 +252,24 @@ footer a:hover {
     opacity: 90%;
 }
 
+
+/* Booking */
+#booking fieldset {
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#booking button {
+    padding: 2px 3px;
+    margin: 10px 5px 5px 0px;
+}
+
+#booking-feedback.success {
+    color: #176b4d;
+}
+#booking-feedback.error {
+    color: #b42318;
+}
 /*css för länken till formuläret */
 #booking-btn {
     box-sizing: border-box;
