@@ -1,4 +1,14 @@
 # Sprint Goals
+## Sprint goal 5: API
+Vårt fokus är att koppla API datan till vår evenemangslista som ska hämta den fiktiva informationen och lägga det i ett kort per evenemang.
+Vi ska implementera rimlig felhantering, visa lämplig data samt skapa dokumentation för API.
+
+Det krävs för att besökare ska kunna visa en lista på nuvarande evenemang.
+
+Detta bekräftas när evenemangen visas i varsitt kort med den fiktiva informationen och felhanteringen är testad och fungerande.
+
+1 vecka
+
 ## Sprint goal 4: JavaScript
 Vårt fokus är att bygga ett fungerande bokningsformulär som tar emot värden och skriver ut en bekräftelse på bokning.
 Vi ska skapa en detaljvy i form av en pop-up med information om evenemangen, man ska också komma åt bokningsformuläret därifrån.
