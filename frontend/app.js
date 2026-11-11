@@ -107,24 +107,17 @@ form.addEventListener("submit", booking => {
     feedback.classList.remove("error");
 });
 
+// API-implementation
+const apiUrl = "http://localhost:5043/api/events/";
+const apiLoadButton = document.querySelector("#load-events");
+const apiStatus = document.querySelector("#event-list-status");
+const apiEventList = document.querySelector(".event-list");
 
-// koppla app.js med defer --klart--
+async function loadEventList() {
+    apiStatus.textContent = "Hämtar evenemang...";
+    apiEventList.replaceChildren();
 
-//  Välj DOM-element --klart--
+    
+}
 
-// kontrollera referenserna i Console --klart--
-
-// lyssna på formulärets submit --klart--
-
-// stoppa omladdning --klart--
-
-// läs och normalisera värden --klart--
-
-// validera --klart--
-
-// visa fel eller bekräftelse --klart--
-
-// uppdatera CSS-klasser --klart--
-
-// testa efter varje steg --klart--
-
+apiLoadButton.addEventListener("click", loadEventList);
