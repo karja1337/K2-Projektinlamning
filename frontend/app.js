@@ -10,35 +10,6 @@ const modalOrganizer = document.getElementById('modal-organizer');
 const closeModalBtn = document.getElementById('modal-close-btn');
 const modalCategory = document.getElementById('modal-category');
 
-// forEach loop to add click event listener to each event card
-document.querySelectorAll('.event-card').forEach(card =>{
-    card.addEventListener('click', function(){
-        // Get the data from the clicked card
-        const img = card.querySelector('.event-card-img').src;
-        const title = card.querySelector('.event-card-title').textContent;
-        const desc = card.querySelector('.event-card-desc').textContent;
-        const date = card.querySelector('.event-card-date').textContent;
-        const time = card.querySelector('.event-card-time').textContent;
-        const location = card.querySelector('.event-card-location').textContent;
-        const organizer = card.querySelector('.event-card-organizer').textContent;
-        const category = card.querySelector('.event-card-category').textContent;
-
-        // add modal content
-        modalImg.src = img;
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modalDate.textContent = date;
-        modalTime.textContent = time;
-        modalLocation.textContent = location;
-        modalOrganizer.textContent = organizer;
-        modalCategory.textContent = category;
-
-        //open the modal
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-    });
-});
-
 // booking form variables
 const bookingBtn = document.getElementById('booking-btn');
 const bookingForm = document.getElementById('booking-form');
@@ -50,16 +21,13 @@ closeModalBtn.addEventListener('click', function(){
 });
 
 // open the booking form when the booking button is clicked
-
 bookingBtn.addEventListener('click', function(){
     bookingForm.classList.add('active');
-    
 });
 
 // Form functionality
 
 //variables from selected query
-
 const form = document.querySelector("#booking");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -87,7 +55,7 @@ form.addEventListener("submit", booking => {
         feedback.classList.remove("success");
         return;
     }
-    //Här kommer bekräftelsen
+
     if (groupsize === "1"){
     feedback.textContent = 
        `Tack för din bokning ${name}! 
@@ -165,8 +133,39 @@ async function loadEventList() {
             eventCard.append(eventImg, title, description, date, location, organizer, category);
             apiEventListDiv.append(eventCard);
         }     
-        apiStatus.textContent = `${events.length}st evenemang hämtades` ;
-    }catch (error) {
+        apiStatus.textContent = `${events.length} evenemang hämtades` ;
+
+        // forEach loop to add click event listener to each event card
+        document.querySelectorAll('.event-card').forEach(card =>{
+            card.addEventListener('click', function(){
+
+                // Get the data from the clicked card
+                const img = card.querySelector('.event-card-img').src;
+                const title = card.querySelector('.event-card-title').textContent;
+                const desc = card.querySelector('.event-card-desc').textContent;
+                const date = card.querySelector('.event-card-date').textContent;
+                // const time = card.querySelector('.event-card-time').textContent;
+                const location = card.querySelector('.event-card-location').textContent;
+                const organizer = card.querySelector('.event-card-organizer').textContent;
+                const category = card.querySelector('.event-card-category').textContent;
+
+                // add modal content
+                modalImg.src = img;
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+                modalDate.textContent = date;
+                // modalTime.textContent = time;
+                modalLocation.textContent = location;
+                modalOrganizer.textContent = organizer;
+                modalCategory.textContent = category;
+
+                //open the modal
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+            });
+        });
+
+    } catch (error) {
         console.error("Kunde inte hämta evenemang.");
         apiStatus.textContent = "Evenemangen kunde inte hämtas. Försök igen.";
     }
