@@ -117,7 +117,23 @@ async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
     apiEventList.replaceChildren();
 
-    
+    try {
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error(`HTTP-fel: ${response.status}`);
+        }
+
+        const events = await response.json();
+
+        if (events.length === 0) {
+            apiStatus.textContent = "Inga planerade evenemang hittades."
+            return;
+        }        
+    }catch (error) {
+        console.error("Kunde inte hämta evenemang.");
+        apiStatus.textContent = "Evenemangen kunde inte hämtas. Försök igen.";
+    }
 }
 
 apiLoadButton.addEventListener("click", loadEventList);
