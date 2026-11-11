@@ -79,7 +79,7 @@ form.addEventListener("submit", booking => {
     const phonenumber = phonenumberInput.value.trim();
     const event = eventSelect.value;
     const groupsize = groupsizeSelect.value;
-    
+    const registrationTime = new Date().toLocaleString(); // Get the current date and time
     
     if (name === "" || email === "" || phonenumber === "" || event === "" || groupsize === "") {
         feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
@@ -92,7 +92,8 @@ form.addEventListener("submit", booking => {
     feedback.textContent = 
        `Tack för din bokning ${name}! 
        Du har bokat ${groupsize} plats till ${event}.
-       En bekräftelse skickas till ${email}.`;
+       En bekräftelse skickas till ${email}.
+       Bokning registrerad: ${registrationTime}`;
        feedback.classList.add("success");
         feedback.classList.remove("error");
        return;
@@ -100,7 +101,8 @@ form.addEventListener("submit", booking => {
     feedback.textContent = 
     `Tack för din bokning ${name}! 
     Du har bokat ${groupsize} platser till ${event}.
-    En bekräftelse skickas till ${email}.`;
+    En bekräftelse skickas till ${email}.
+    Bokning registrerad: ${registrationTime}`;
     feedback.classList.add("success");
     feedback.classList.remove("error");
 });
