@@ -18,6 +18,7 @@ closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
     bookingForm.classList.remove('active');
     bookingBtn.style.display = 'block';
+    feedback.textContent = ""
 });
 
 // open the booking form when the booking button is clicked
