@@ -111,11 +111,11 @@ form.addEventListener("submit", booking => {
 const apiUrl = "http://localhost:5043/api/events/";
 const apiLoadButton = document.querySelector("#load-events");
 const apiStatus = document.querySelector("#event-list-status");
-const apiEventList = document.querySelector(".event-list");
+const apiEventListDiv = document.querySelector(".event-list");
 
 async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
-    apiEventList.replaceChildren();
+    apiEventListDiv.replaceChildren();
 
     try {
         const response = await fetch(apiUrl);
@@ -129,7 +129,36 @@ async function loadEventList() {
         if (events.length === 0) {
             apiStatus.textContent = "Inga planerade evenemang hittades."
             return;
-        }        
+        }  
+        for(const event of events){
+            const eventCard = document.createElement("article");
+            eventCard.classList.add('event-card');
+
+            const eventImg = document.createElement("img");
+            eventImg.setAttribute('src', 'images/placeholder_cover.jpg');
+
+            const title = document.createElement("h3");
+            title.classList.add('event-card-title');
+
+            const description = document.createElement("p");
+            description.classList.add('event-card-desc');
+
+            const date = document.createElement("p");
+            date.classList.add('event-card-date');
+
+            const location = document.createElement("p");
+            location.classList.add('event-card-location');
+
+            const organizer = document.createElement("p");
+            organizer.classList.add('event-card-organizer');
+
+            const category = document.createElement("p");
+            category.classList.add('event-card-category');
+            title.textContent = event.title;
+            
+            apiEventListDiv.append(eventCard, title, description, date, location, organizer, category);
+        }     
+        apiStatus.textContent = `${events.length}st evenemang hämtades` ;
     }catch (error) {
         console.error("Kunde inte hämta evenemang.");
         apiStatus.textContent = "Evenemangen kunde inte hämtas. Försök igen.";
