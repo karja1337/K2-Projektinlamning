@@ -136,27 +136,34 @@ async function loadEventList() {
 
             const eventImg = document.createElement("img");
             eventImg.setAttribute('src', 'images/placeholder_cover.jpg');
+            eventImg.classList.add('event-card-img')
 
             const title = document.createElement("h3");
             title.classList.add('event-card-title');
+            title.textContent = event.title;
 
             const description = document.createElement("p");
             description.classList.add('event-card-desc');
+            description.textContent = event.description;
 
             const date = document.createElement("p");
             date.classList.add('event-card-date');
+            date.textContent = event.startsAt;
 
             const location = document.createElement("p");
             location.classList.add('event-card-location');
+            location.textContent = event.venue;
 
             const organizer = document.createElement("p");
             organizer.classList.add('event-card-organizer');
+            organizer.textContent = event.organizer;
 
             const category = document.createElement("p");
             category.classList.add('event-card-category');
-            title.textContent = event.title;
+            category.textContent = event.category;
             
-            apiEventListDiv.append(eventCard, title, description, date, location, organizer, category);
+            eventCard.append(eventImg, title, description, date, location, organizer, category);
+            apiEventListDiv.append(eventCard);
         }     
         apiStatus.textContent = `${events.length}st evenemang hämtades` ;
     }catch (error) {
