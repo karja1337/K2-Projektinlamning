@@ -1,3 +1,24 @@
+## Daily Scrum – 11/11-26
+
+### Framsteg mot sprintmålet
+- Skapat ett fungerande bokningsformulär.
+- Skapat en detaljvy som visar informationen vi vill.
+- Städat upp CSS filen.
+- Bekräftelsen vid bokning visar tiden när bokningen gjordes.
+- Matchat testdatan i databasen med frontend.
+- Lagt till relevanta bilder för varje evenemang.
+### Arbete till nästa avstämning
+- Klona och koppla API-data.
+- Implementera felhantering.
+- Dokumentera datagränsen och säkerhetshänsyn.
+### Hinder eller risker
+- En sjuk i teamet.
+### Hjälp eller beslut som behövs
+- Två pull requests behöver granskas och mergas.
+### Förändring i planen eller tavlan
+- Nytt sprintgoal behöver formuleras och därmed nya kort, tavlan är ganska tom just nu.
+
+---
 
 ## Daily Scrum – 4/11-26
 ### Framsteg mot sprintmålet
