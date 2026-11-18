@@ -68,7 +68,7 @@ function mountBookingForm(eventTitle) {
             feedback.classList.remove("success");
             return;
         }
-        if (groupsize === "1"){
+        if (bookingData.groupsize === "1"){
             feedback.textContent = 
                 `Tack för din bokning ${bookingData.name}! 
                 Du har bokat ${bookingData.groupsize} plats till ${bookingData.eventTitle}.
