@@ -86,10 +86,18 @@ async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
     apiEventListDiv.replaceChildren();
 
+    let userMessage = "Evenemangen kunde inte hämtas. Försök igen";
+
     try {
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
+            if (response.status === 404) {
+                userMessage = "Evenemangen kunde inte hittas."
+            } else if (response.status >= 500 && response.status <= 599) {
+                userMessage = "Tjänsten har problem. Försök igen senare";
+            }
+
             throw new Error(`HTTP-fel: ${response.status}`);
         }
 
@@ -182,8 +190,8 @@ async function loadEventList() {
         });
 
     } catch (error) {
-        console.error("Kunde inte hämta evenemang.");
-        apiStatus.textContent = "Evenemangen kunde inte hämtas. Försök igen.";
+        console.error("Kunde inte hämta evenemang. Se Network för mer information.");
+        apiStatus.textContent = userMessage;
     }
 }
 
