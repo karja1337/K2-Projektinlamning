@@ -85,6 +85,7 @@ const apiEventListDiv = document.querySelector(".event-list");
 async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
     apiEventListDiv.replaceChildren();
+    apiLoadButton.disabled = true;
 
     let userMessage = "Evenemangen kunde inte hämtas. Försök igen.";
 
@@ -196,7 +197,8 @@ async function loadEventList() {
         apiLoadButton.disabled = false;
     }
 }
-    onload = loadEventList()
+
+apiLoadButton.addEventListener("click", loadEventList);
 
 // Search bar function
 const searchBar = document.getElementById('search-bar');
