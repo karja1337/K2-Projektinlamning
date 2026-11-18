@@ -277,11 +277,11 @@ footer a:hover {
 }
 
 /* Error feedback */
-#booking-feedback.success {
+.booking-feedback.success {
     color: #176b4d;
 }
 
-#booking-feedback.error {
+.booking-feedback.error {
     color: #b42318;
 }
 
