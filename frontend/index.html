@@ -20,8 +20,9 @@
             <span id="modal-time" class="event-card-time"></span>
             <span id="modal-location" class="event-card-location"></span>
             <span id="modal-organizer" class="event-card-organizer"></span>       
-            <span id="modal-category" class="event-card-category"></span>      
+            <span id="modal-category" class="event-card-category"></span>             
         </div>
+        <div id="modal-form-container"></div>
         <!---<section id="booking">
             <a id="booking-btn" class="booking-btn" href="#booking">Boka</a>
             <form id="booking-form" class="modal-booking-form">
@@ -93,6 +94,52 @@
         
         <input id="search-bar" type="text" placeholder="Sök...">
     </header>
+    <template id="booking-form-template">
+        <div class="booking-section">
+            <button type="button" class="toggle-booking-btn" aria-expanded="false">Boka plats</button>
+            
+            <form class="card-booking-form" hidden>
+                <input type="hidden" name="eventbooking" value="">
+
+                <fieldset>
+                    <legend>Bokningsuppgifter</legend>
+                    <div>
+                        <label>Namn: <input name="name" type="text" maxlength="100" required></label>
+                    </div>
+                    <div>
+                        <label>E-post: <input name="email" type="email" maxlength="250" required></label>
+                    </div>
+                    <div>
+                        <label>Tel-nummer: <input name="phonenumber" type="tel" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" required></label>
+                    </div>
+                    <div>
+                        <label>
+                            Antal:
+                            <select name="groupsize" required>
+                                <option value="">Välj antal</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </label>                        
+                    </div>
+
+                    <button type="submit">Skicka bokning</button>
+                    <button type="reset">Rensa</button>
+                </fieldset>
+            </form>
+            
+            <p class="booking-feedback" role="status"></p> 
+        </div>
+    </template>
+    
 <main>
     <section id="about">
         <h2>Välkommen till Älvsbyn kommuns hemsida!</h2>
