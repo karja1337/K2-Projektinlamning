@@ -117,21 +117,36 @@ async function loadEventList() {
 
             const date = document.createElement("p");
             date.classList.add('event-card-date');
-            date.textContent = event.startsAt;
+
+            const time = document.createElement("p");
+            time.classList.add('event-card-time');
+
+            // startsAt format: "2026-00-00T00:00:00+01:00".
+            let unformatDateTime = event.startsAt;
+            // Splits string at "T", seperating date and time into array.
+            const unformatDateTimeArray = unformatDateTime.split("T");
+
+            // Takes out date and shortens time to just 5 characters, "00:00".
+            let editDate = unformatDateTimeArray[0];
+            let editTime = unformatDateTimeArray[1].substring(0, 5);
+
+            // Adds titles and places in HTML-elements.
+            date.textContent = `Datum: ${editDate}`;
+            time.textContent = `Starttid: ${editTime}`;
 
             const location = document.createElement("p");
             location.classList.add('event-card-location');
-            location.textContent = event.venue;
+            location.textContent = `Plats: ${event.venue}`;
 
             const organizer = document.createElement("p");
             organizer.classList.add('event-card-organizer');
-            organizer.textContent = event.organizer;
+            organizer.textContent = `Arrangör: ${event.organizer}`;
 
             const category = document.createElement("p");
             category.classList.add('event-card-category');
             category.textContent = event.category;
             
-            eventCard.append(eventImg, title, description, date, location, organizer, category);
+            eventCard.append(eventImg, title, description, date, time, location, organizer, category);
             apiEventListDiv.append(eventCard);
         }     
         apiStatus.textContent = `${events.length} evenemang hämtades` ;
@@ -145,7 +160,7 @@ async function loadEventList() {
                 const title = card.querySelector('.event-card-title').textContent;
                 const desc = card.querySelector('.event-card-desc').textContent;
                 const date = card.querySelector('.event-card-date').textContent;
-                // const time = card.querySelector('.event-card-time').textContent;
+                const time = card.querySelector('.event-card-time').textContent;
                 const location = card.querySelector('.event-card-location').textContent;
                 const organizer = card.querySelector('.event-card-organizer').textContent;
                 const category = card.querySelector('.event-card-category').textContent;
@@ -155,7 +170,7 @@ async function loadEventList() {
                 modalTitle.textContent = title;
                 modalDesc.textContent = desc;
                 modalDate.textContent = date;
-                // modalTime.textContent = time;
+                modalTime.textContent = time;
                 modalLocation.textContent = location;
                 modalOrganizer.textContent = organizer;
                 modalCategory.textContent = category;
