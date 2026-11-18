@@ -188,3 +188,30 @@ async function loadEventList() {
 }
 
 apiLoadButton.addEventListener("click", loadEventList);
+
+// Search bar function
+const searchBar = document.getElementById('search-bar');
+searchBar.addEventListener('input', function() {
+    const searchTerm = searchBar.value.toLowerCase();
+    const eventCards = document.querySelectorAll('.event-card');
+
+    eventCards.forEach(card => {
+        const title = card.querySelector('.event-card-title').textContent.toLowerCase();
+        const category = card.querySelector('.event-card-category').textContent.toLowerCase();
+        //hide or show the card based on the search term
+        if (title.includes(searchTerm) || category.includes(searchTerm)) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+
+        // Update the status message based on the number of visible cards
+         const visibleCards = document.querySelectorAll('.event-card:not(.hidden)');
+
+         if (visibleCards.length === 0) {
+            apiStatus.textContent = "Inga evenemang matchar din sökning.";
+        } else {
+            apiStatus.textContent = `${visibleCards.length} evenemang matchar din sökning.`;
+        }
+    });
+    });
