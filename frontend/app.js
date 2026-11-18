@@ -18,7 +18,7 @@ closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
     bookingForm.classList.remove('active');
     bookingBtn.style.display = 'block';
-    feedback.textContent = ""
+    feedback.textContent = "";
 });
 
 // open the booking form when the booking button is clicked
@@ -85,18 +85,27 @@ const apiEventListDiv = document.querySelector(".event-list");
 async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
     apiEventListDiv.replaceChildren();
+    apiLoadButton.disabled = true;
+
+    let userMessage = "Evenemangen kunde inte hämtas. Försök igen.";
 
     try {
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
+            if (response.status === 404) {
+                userMessage = "Evenemangen kunde inte hittas.";
+            } else if (response.status >= 500 && response.status <= 599) {
+                userMessage = "Tjänsten har problem. Försök igen senare.";
+            }
+
             throw new Error(`HTTP-fel: ${response.status}`);
         }
 
         const events = await response.json();
 
         if (events.length === 0) {
-            apiStatus.textContent = "Inga planerade evenemang hittades."
+            apiStatus.textContent = "Inga planerade evenemang hittades.";
             return;
         }  
         for(const event of events){
@@ -149,7 +158,7 @@ async function loadEventList() {
             eventCard.append(eventImg, title, description, date, time, location, organizer, category);
             apiEventListDiv.append(eventCard);
         }     
-        apiStatus.textContent = `${events.length} evenemang hämtades` ;
+        apiStatus.textContent = `${events.length} evenemang hämtades`;
 
         // forEach loop to add click event listener to each event card
         document.querySelectorAll('.event-card').forEach(card =>{
@@ -182,8 +191,10 @@ async function loadEventList() {
         });
 
     } catch (error) {
-        console.error("Kunde inte hämta evenemang.");
-        apiStatus.textContent = "Evenemangen kunde inte hämtas. Försök igen.";
+        console.error("Kunde inte hämta evenemang. Se Network för mer information.");
+        apiStatus.textContent = userMessage;
+    } finally {
+        apiLoadButton.disabled = false;
     }
 }
 
