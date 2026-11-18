@@ -11,17 +11,17 @@ const closeModalBtn = document.getElementById('modal-close-btn');
 const modalCategory = document.getElementById('modal-category');
 
 // booking form variables
-const bookingBtn = document.getElementById('booking-btn');
-const bookingForm = document.getElementById('booking-form');
+//const bookingBtn = document.getElementById('booking-btn');
+//const bookingForm = document.getElementById('booking-form');
 // close the modal box when the close button is clicked
 closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
-    bookingForm.classList.remove('active');
-    bookingBtn.style.display = 'block';
+    //bookingForm.classList.remove('active');
+    //bookingBtn.style.display = 'block';
     feedback.textContent = "";
 });
 
-// open the booking form when the booking button is clicked
+/*// open the booking form when the booking button is clicked
 bookingBtn.addEventListener('click', function(){
     bookingForm.classList.add('active');
 });
@@ -75,7 +75,7 @@ form.addEventListener("submit", booking => {
     feedback.classList.add("success");
     feedback.classList.remove("error");
 });
-
+*/
 // API-implementation
 const apiUrl = "http://localhost:5043/api/events/";
 const apiLoadButton = document.querySelector("#load-events");
@@ -157,6 +157,7 @@ async function loadEventList() {
             
             eventCard.append(eventImg, title, description, date, time, location, organizer, category);
             apiEventListDiv.append(eventCard);
+            
         }     
         apiStatus.textContent = `${events.length} evenemang hämtades`;
 
@@ -187,9 +188,9 @@ async function loadEventList() {
                 //open the modal
                 modal.classList.add('active');
                 modal.setAttribute('aria-hidden', 'false');
-            });
-        });
-
+            });            
+        });       
+       
     } catch (error) {
         console.error("Kunde inte hämta evenemang. Se Network för mer information.");
         apiStatus.textContent = userMessage;
