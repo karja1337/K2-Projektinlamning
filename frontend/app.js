@@ -160,33 +160,20 @@ async function loadEventList() {
         }     
         apiStatus.textContent = `${events.length} evenemang hämtades`;
 
-        // forEach loop to add click event listener to each event card
-        document.querySelectorAll('.event-card').forEach(card =>{
-            card.addEventListener('click', function(){
 
-                // Get the data from the clicked card
-                const img = card.querySelector('.event-card-img').src;
-                const title = card.querySelector('.event-card-title').textContent;
-                const desc = card.querySelector('.event-card-desc').textContent;
-                const date = card.querySelector('.event-card-date').textContent;
-                const time = card.querySelector('.event-card-time').textContent;
-                const location = card.querySelector('.event-card-location').textContent;
-                const organizer = card.querySelector('.event-card-organizer').textContent;
-                const category = card.querySelector('.event-card-category').textContent;
+        const eventCardArray = document.querySelectorAll('.event-card');
 
-                // add modal content
-                modalImg.src = img;
-                modalTitle.textContent = title;
-                modalDesc.textContent = desc;
-                modalDate.textContent = date;
-                modalTime.textContent = time;
-                modalLocation.textContent = location;
-                modalOrganizer.textContent = organizer;
-                modalCategory.textContent = category;
-
-                //open the modal
-                modal.classList.add('active');
-                modal.setAttribute('aria-hidden', 'false');
+        // For each card: Add listener for 'click' or 'Enter', so website can be navigated with Tab-key.
+        eventCardArray.forEach(card => {
+            card.addEventListener('click', function () {
+                fillModalBox(card);
+                openModalBox();
+            })
+            card.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    fillModalBox(card);
+                    openModalBox();
+                }
             });
         });
 
@@ -225,4 +212,32 @@ searchBar.addEventListener('input', function() {
             apiStatus.textContent = `${visibleCards.length} evenemang matchar din sökning.`;
         }
     });
-    });
+});
+
+function openModalBox() {
+    //open the modal
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function fillModalBox(card) {
+    // Get the data from the clicked card
+    const img = card.querySelector('.event-card-img').src;
+    const title = card.querySelector('.event-card-title').textContent;
+    const desc = card.querySelector('.event-card-desc').textContent;
+    const date = card.querySelector('.event-card-date').textContent;
+    const time = card.querySelector('.event-card-time').textContent;
+    const location = card.querySelector('.event-card-location').textContent;
+    const organizer = card.querySelector('.event-card-organizer').textContent;
+    const category = card.querySelector('.event-card-category').textContent;
+
+    // add modal content
+    modalImg.src = img;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalDate.textContent = date;
+    modalTime.textContent = time;
+    modalLocation.textContent = location;
+    modalOrganizer.textContent = organizer;
+    modalCategory.textContent = category;
+}
