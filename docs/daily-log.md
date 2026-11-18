@@ -1,3 +1,23 @@
+## Daily Scrum – 18/11-26
+
+### Framsteg mot sprintmålet
+- Klona och koppla API-data.
+- Implementera felhantering.
+- Dokumentera datagränsen och säkerhetshänsyn.
+### Arbete till nästa avstämning
+- HTTP-statusgrupper och centrala statuskoder
+- `finally` för att städa upp gränssnittet oavsett hur try-catch går.
+- Säker användaråterkoppling.
+### Hinder eller risker
+- En borta i teamet.
+- Bredbands uppehåll.
+### Hjälp eller beslut som behövs
+- Två pull requests ska granskas och mergeas.
+### Förändring i planen eller tavlan
+- Ingen förändring.
+
+---
+
 ## Daily Scrum – 11/11-26
 
 ### Framsteg mot sprintmålet
