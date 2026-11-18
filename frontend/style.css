@@ -304,14 +304,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Hides booking form until user clicks on booking link. */
-#booking-form {
-    display: none !important;
-}
-
-#booking-form.active {
-    display: block !important;
-}
 /*Search bar*/
 #search-bar {
     padding: 6px;
