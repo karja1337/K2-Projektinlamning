@@ -111,6 +111,7 @@ async function loadEventList() {
         for(const event of events){
             const eventCard = document.createElement("article");
             eventCard.classList.add('event-card');
+            eventCard.tabIndex = 0;
 
             const eventImg = document.createElement("img");
             eventImg.setAttribute('src', 'images/placeholder_cover.jpg');
@@ -196,7 +197,8 @@ searchBar.addEventListener('input', function() {
     eventCards.forEach(card => {
         const title = card.querySelector('.event-card-title').textContent.toLowerCase();
         const category = card.querySelector('.event-card-category').textContent.toLowerCase();
-        //hide or show the card based on the search term
+
+        // Hide or show the card based on the search term
         if (title.includes(searchTerm) || category.includes(searchTerm)) {
             card.classList.remove('hidden');
         } else {
@@ -204,9 +206,9 @@ searchBar.addEventListener('input', function() {
         }
 
         // Update the status message based on the number of visible cards
-         const visibleCards = document.querySelectorAll('.event-card:not(.hidden)');
+        const visibleCards = document.querySelectorAll('.event-card:not(.hidden)');
 
-         if (visibleCards.length === 0) {
+        if (visibleCards.length === 0) {
             apiStatus.textContent = "Inga evenemang matchar din sökning.";
         } else {
             apiStatus.textContent = `${visibleCards.length} evenemang matchar din sökning.`;
