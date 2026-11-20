@@ -98,7 +98,6 @@ function mountBookingForm(eventTitle) {
 
 // API-implementation
 const apiUrl = "http://localhost:5043/api/events/";
-const apiLoadButton = document.querySelector("#load-events");
 const apiStatus = document.querySelector("#event-list-status");
 const apiEventListDiv = document.querySelector(".event-list");
 
@@ -201,9 +200,7 @@ async function loadEventList() {
     } catch (error) {
         console.error("Kunde inte hämta evenemang. Se Network för mer information.");
         apiStatus.textContent = userMessage;
-    } finally {
-        apiLoadButton.disabled = false;
-    }
+    } 
 }
     onload = loadEventList()
 
@@ -251,7 +248,7 @@ function fillModalBox(card) {
     const location = card.querySelector('.event-card-location').textContent;
     const organizer = card.querySelector('.event-card-organizer').textContent;
     const category = card.querySelector('.event-card-category').textContent;
-
+    mountBookingForm(title);
     // add modal content
     modalImg.src = img;
     modalTitle.textContent = title;
