@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
     line-height: 1.6;
@@ -225,8 +229,8 @@ footer a:hover, footer a:focus {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 1.5rem;
-    font-size: 13px;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
 }
 
 .modal-desc {
@@ -266,12 +270,12 @@ footer a:hover, footer a:focus {
 
 
 /* Booking */
-#booking fieldset {
+.card-booking-form fieldset {
     padding: 5px 10px;
     margin-top: 10px;
 }
 
-#booking button {
+.card-booking-form button, .toggle-booking-btn {
     padding: 2px 3px;
     margin: 10px 5px 5px 0px;
 }
@@ -285,8 +289,8 @@ footer a:hover, footer a:focus {
     color: #b42318;
 }
 
-#booking-btn {
-    box-sizing: content-box;
+/* .toggle-booking-btn {
+    box-sizing: border-box;
     width: fit-content;
     
     color: black;
@@ -297,12 +301,12 @@ footer a:hover, footer a:focus {
     background-color: #e7e7e7;
 }
 
-#booking-btn:hover, #booking-btn:focus {
+.toggle-booking-btn:hover, .toggle-booking-btn:focus {
     background-color: white;
     border-color: #6495d4;
     color: #2c4970;
     text-decoration: underline;
-}
+} */
 
 /*Search bar*/
 #search-bar {

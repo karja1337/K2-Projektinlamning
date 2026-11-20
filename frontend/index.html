@@ -23,61 +23,6 @@
             <span id="modal-category" class="event-card-category"></span>             
         </div>
         <div id="modal-form-container"></div>
-        <!---<section id="booking">
-            <a id="booking-btn" class="booking-btn" href="#booking">Boka</a>
-            <form id="booking-form" class="modal-booking-form">
-                <fieldset>
-                    <div>
-                        <label for="name">Namn:</label>
-                        <input id="name" name="name" type="text" maxlength="100" required>
-                    </div>
-
-                    <div>
-                        <label for="email">E-post:</label>
-                        <input id="email" name="email" type="email" maxlength="250" required>
-                    </div>
-
-                    <div>
-                        <label for="phonenumber">Tel-nummer:</label>
-                        <input id="phonenumber" name="phonenumber" type="tel" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" required>
-                    </div>
-
-                    <div>
-                        <label for="eventbooking">Evenemang:</label>
-                        <select id="eventbooking" name="eventbooking">
-                            <option value="">Välj evenemang</option>
-                            <option value="Fotboll">Fotboll</option>
-                            <option value="Grillkväll med lokala gitarrspelare">Grillkväll med lokala gitarrspelare</option>
-                            <option value="Pettson & Findus">Pettson & Findus</option>
-                            <option value="Madicken">Madicken</option>
-                            <option value="Gemensam hockeykväll">Gemensam hockeykväll</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="groupsize">Antal:</label>
-                        <select id="groupsize" name="groupsize">
-                            <option value="">Välj antal</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>                        
-                    </div>
-
-                    <button type="submit">Skicka bokning</button>
-                    <button type="reset">Rensa</button>
-                
-                </fieldset>
-            </form>
-        <p id="booking-feedback" role="status"></p> 
-        </section>--->
     </div>
 </div>
 <body>
@@ -155,126 +100,6 @@
         <p id="event-list-status"></p>
             <div class="event-list">
 
-                 <!--<article class="event-card">
-                    <img src="images/fotboll_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Fotboll</h3>
-
-                    <p class="event-card-desc">
-                        Kom och sparka boll på Älvsby Arena
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-17</p>
-                    <p class="event-card-time">Starttid: 19:00</p>
-                    <p class="event-card-location">Plats: Musikhuset</p>
-                    <p class="event-card-organizer">Arrangör: Felicia Dal (felicia.d@example.se)</p>
-                    <p class="event-card-category">Sport</p>                    
-                </article>
-                
-                <article class="event-card">
-                    <img src="images/madicken_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Madicken</h3>
-
-                    <p class="event-card-desc">
-                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-16</p>
-                    <p class="event-card-time">Starttid: 16:00</p>
-                    <p class="event-card-location">Plats: Folketshus</p>
-                    <p class="event-card-organizer">Arrangör: Paul Vik (paul.v@example.se)</p>
-                    <p class="event-card-category">Teater</p>
-                </article>
-
-                <article class="event-card">
-                    <img src="images/pettson_och_findus_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Pettson & Findus</h3>
-
-                    <p class="event-card-desc">
-                        Ta med familjen på en resa in i Pettson & Findus fantasifulla värld i denna magnifika teaterföreställning.
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-15</p>
-                    <p class="event-card-time">Starttid: 13:00</p>
-                    <p class="event-card-location">Plats: Älvsby arena</p>
-                    <p class="event-card-organizer">Arrangör: Paul Vik (paul.v@example.se)</p>
-                    <p class="event-card-category">Teater</p>
-                </article>
-
-                <article class="event-card">
-                    <img src="images/madicken_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Madicken</h3>
-
-                    <p class="event-card-desc">
-                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-15</p>
-                    <p class="event-card-time">Starttid: 16:00</p>
-                    <p class="event-card-location">Plats: Folkets hus</p>
-                    <p class="event-card-organizer">Arrangör: Paul Vik (paul.v@example.se)</p>
-                    <p class="event-card-category">Teater</p>
-                </article>
-
-                <article class="event-card">
-                    <img src="images/hockeykväll_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Gemensam hockeykväll</h3>
-
-                    <p class="event-card-desc">
-                        Välkommen till en gemensam hockeykväll utanför Älvsby Arena. Vi tittar gemensamt på kvällens hockeymatch på storbild. Ta med något att sitta på!
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-15</p>
-                    <p class="event-card-time">Starttid: 19:00</p>
-                    <p class="event-card-location">Plats: Folkets hus</p>
-                    <p class="event-card-organizer">Arrangör: Thomas Falk (thomas.f@example.se)</p>
-                    <p class="event-card-category">Sport</p>
-                </article>
-
-                <article class="event-card">
-                    <img src="images/hockeykväll_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Gemensam hockeykväll</h3>
-
-                    <p class="event-card-desc">
-                        Välkommen till en gemensam hockeykväll utanför Älvsby Arena. Vi tittar gemensamt på kvällens hockeymatch på storbild. Ta med något att sitta på!
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-17</p>
-                    <p class="event-card-time">Starttid: 16:00</p>
-                    <p class="event-card-location">Plats: Torget</p>
-                    <p class="event-card-organizer">Arrangör: Anita Holm (anita.h@example.se)</p>
-                    <p class="event-card-category">Sport</p>
-                </article>
-                               
-                <article class="event-card">
-                    <img src="images/trubadurer_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Grillkväll med lokala gitarrspelare</h3>
-
-                    <p class="event-card-desc">
-                        Välkommen till en grillkväll utanför musikhuset där vi bjudit in lokala gitarrister att spela. Vi bjuder på korv och läsk.
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-20</p>
-                    <p class="event-card-time">Starttid: 14:00</p>
-                    <p class="event-card-location">Plats: Stora salen</p>
-                    <p class="event-card-organizer">Arrangör: Ulrika Hammar (ultika.h@example.se)</p>
-                    <p class="event-card-category">Musik</p>
-                </article>
-
-                <article class="event-card">
-                    <img src="images/madicken_cover.jpg" class="event-card-img">
-                    <h3 class="event-card-title">Madicken</h3>
-
-                    <p class="event-card-desc">
-                        Här kommer en riktig klassiker för både stora och små. En fantasifull teaterföreställning där vi väcker Astrid Lindgrens älskade berättelser till liv!
-                    </p>
-
-                    <p class="event-card-date">Datum: 2026-11-20</p>
-                    <p class="event-card-time">Starttid: 19:00</p>
-                    <p class="event-card-location">Plats: Älvsby arena</p>
-                    <p class="event-card-organizer">Arrangör: Ulrika Hammar (ultika.h@example.se)</p>
-                    <p class="event-card-category">Teater</p>
-                </article>
-            -->
             </div>
     </section>
 
@@ -284,7 +109,7 @@
 
 </main>
     <footer id="contact">
-        <p>Kontakta oss på <a href="">hej@alvsbynskommun.se</a></p>
+        <p>Kontakta oss på <a href="#contact">hej@alvsbynskommun.se</a></p>
     </footer>
 </body>
 </html>
