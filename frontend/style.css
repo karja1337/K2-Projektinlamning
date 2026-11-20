@@ -43,7 +43,7 @@ footer a {
     color: #6e3200;
 }
 
-footer a:hover {
+footer a:hover, footer a:focus {
     text-decoration: underline;
     color: #000;
 }
@@ -56,7 +56,7 @@ footer a:hover {
     float: right;
 }
 
-#top-anchor a:hover {
+#top-anchor a:hover, #top-anchor a:focus {
     text-decoration: underline;
     color: #000;
 }
@@ -74,7 +74,7 @@ footer a:hover {
     font-weight: 600;
 }
 
-.nav-list a:hover {
+.nav-list a:hover, .nav-list a:focus {
     color: black;
     text-decoration: underline;
 }
@@ -135,7 +135,7 @@ footer a:hover {
     margin: 5px;
 }
 
-.event-card:hover {
+.event-card:hover, .event-card:focus {
     .event-card-title {
         text-decoration: underline;
     }
@@ -260,7 +260,7 @@ footer a:hover {
     opacity: 60%;
 }
 
-.modal-close:hover {
+.modal-close:hover, .modal-close:focus {
     opacity: 90%;
 }
 
@@ -297,7 +297,7 @@ footer a:hover {
     background-color: #e7e7e7;
 }
 
-#booking-btn:hover {
+#booking-btn:hover, #booking-btn:focus {
     background-color: white;
     border-color: #6495d4;
     color: #2c4970;
