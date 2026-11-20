@@ -100,6 +100,7 @@ function mountBookingForm(eventTitle) {
 const apiUrl = "http://localhost:5043/api/events/";
 const apiStatus = document.querySelector("#event-list-status");
 const apiEventListDiv = document.querySelector(".event-list");
+const categoryList = document.querySelector("#category-list");
 
 async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
@@ -177,7 +178,27 @@ async function loadEventList() {
             eventCard.append(eventImg, title, description, date, time, location, organizer, category);
             apiEventListDiv.append(eventCard);
             
-        }     
+        }
+        
+        const added = new Set();
+        categoryList.replaceChildren();
+
+        const defaultOption = document.createElement("option");
+        defaultOption.textContent = "Alla kategorier";
+        defaultOption.value = "All";
+        categoryList.append(defaultOption);
+
+        for (const event of events) {
+            if (added.has(event.category)) continue;
+
+            added.add(event.category);
+
+            const item = document.createElement("option");            
+            item.textContent = event.category;
+            item.value = event.category;          
+            categoryList.append(item);
+        }
+
         apiStatus.textContent = `${events.length} evenemang hämtades`;
 
 
@@ -230,6 +251,29 @@ searchBar.addEventListener('input', function() {
             apiStatus.textContent = `${visibleCards.length} evenemang matchar din sökning.`;
         }
     });
+});
+
+categoryList.addEventListener("change", () => {
+    const selected = categoryList.value;
+     const eventCards = document.querySelectorAll(".event-card");        
+        
+    eventCards.forEach(card => {
+        const eventCategory = card.querySelector(".event-card-category").textContent;
+            
+        if(selected === eventCategory  || selected === "All") {
+        card.classList.remove("hidden");
+        }else {
+            card.classList.add("hidden");
+        }
+
+        const visibleCards = document.querySelectorAll(".event-card:not(.hidden");
+
+        if (visibleCards.length === 0) {
+            apiStatus.textContent = "Det finns inga evenemang inom denna kategorin.";
+        }else {
+            apiStatus.textContent = `${visibleCards.length} Evenemang inom denna kategorin`
+        }
+    })
 });
 
 function openModalBox() {
