@@ -10,71 +10,91 @@ const modalOrganizer = document.getElementById('modal-organizer');
 const closeModalBtn = document.getElementById('modal-close-btn');
 const modalCategory = document.getElementById('modal-category');
 
-// booking form variables
-const bookingBtn = document.getElementById('booking-btn');
-const bookingForm = document.getElementById('booking-form');
+
 // close the modal box when the close button is clicked
 closeModalBtn.addEventListener('click', function(){
     modal.classList.remove('active');
-    bookingForm.classList.remove('active');
-    bookingBtn.style.display = 'block';
-    feedback.textContent = "";
 });
 
-// open the booking form when the booking button is clicked
-bookingBtn.addEventListener('click', function(){
-    bookingForm.classList.add('active');
-});
-
-// Form functionality
-
-//variables from selected query
-const form = document.querySelector("#booking");
-const nameInput = document.querySelector("#name");
-const emailInput = document.querySelector("#email");
-const phonenumberInput= document.querySelector("#phonenumber");
-const eventSelect = document.querySelector("#eventbooking");
-const groupsizeSelect = document.querySelector("#groupsize");
-
-//feedback-paragraph for input validation/error
-const feedback = document.querySelector("#booking-feedback");
-
-
-
-form.addEventListener("submit", booking => {
-  booking.preventDefault();
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const phonenumber = phonenumberInput.value.trim();
-    const event = eventSelect.value;
-    const groupsize = groupsizeSelect.value;
-    const registrationTime = new Date().toLocaleString(); // Get the current date and time
+// Function to mount the booking form
+function mountBookingForm(eventTitle) {
+    const container = document.getElementById('modal-form-container')
+    const template = document.getElementById('booking-form-template')
     
-    if (name === "" || email === "" || phonenumber === "" || event === "" || groupsize === "") {
-        feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
-        feedback.classList.add("error");
-        feedback.classList.remove("success");
-        return;
-    }
+    if (!container || !template) 
+        return; 
 
-    if (groupsize === "1"){
-    feedback.textContent = 
-       `Tack för din bokning ${name}! 
-       Du har bokat ${groupsize} plats till ${event}.
-       En bekräftelse skickas till ${email}.
-       Bokning registrerad: ${registrationTime}`;
-       feedback.classList.add("success");
+    container.innerHTML = '';
+    
+    //clone the emlements from the template
+    const clone = template.content.cloneNode(true);
+    const toggleBtn = clone.querySelector('.toggle-booking-btn');
+    const form = clone.querySelector('.card-booking-form');
+    const hiddenEventTitle = clone.querySelector('input[name="eventbooking"]');
+    const feedback = clone.querySelector('.booking-feedback');
+    
+    // Sets the hidden input to the eventtitle to display it in the confirmation
+    hiddenEventTitle.value = eventTitle;
+
+    // Toggle form visibility when clicking
+    toggleBtn.addEventListener('click', () => {
+
+        const isHidden = form.hasAttribute('hidden');
+
+        if (isHidden){
+            form.removeAttribute('hidden');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.textContent = 'Avbryt bokning';
+        } else {
+            form.setAttribute('hidden', '')
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.textContent = 'Boka plats';
+        }
+    });
+
+    // Handle booking submit and confirmation
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form)
+        const bookingData = Object.fromEntries(formData.entries());
+        const registrationTime = new Date().toLocaleString();
+        console.log('Bokning skickad:', bookingData);
+
+        // Present confimation message in feedback paragraph
+        if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
+            feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
+            feedback.classList.add("error");
+            feedback.classList.remove("success");
+            return;
+        }
+        if (bookingData.groupsize === "1"){
+            feedback.textContent = 
+                `Tack för din bokning ${bookingData.name}! 
+                Du har bokat ${bookingData.groupsize} plats till ${bookingData.eventbooking}.
+                En bekräftelse skickas till ${bookingData.email}.
+                Bokning registrerad: ${registrationTime}`;
+            feedback.classList.add("success");
+            feedback.classList.remove("error");
+            return;
+        }
+        feedback.textContent = 
+        `Tack för din bokning ${bookingData.name}! 
+        Du har bokat ${bookingData.groupsize} platser till ${bookingData.eventbooking}.
+        En bekräftelse skickas till ${bookingData.email}.
+        Bokning registrerad: ${registrationTime}`;
+        feedback.classList.add("success");
         feedback.classList.remove("error");
-       return;
-    }    
-    feedback.textContent = 
-    `Tack för din bokning ${name}! 
-    Du har bokat ${groupsize} platser till ${event}.
-    En bekräftelse skickas till ${email}.
-    Bokning registrerad: ${registrationTime}`;
-    feedback.classList.add("success");
-    feedback.classList.remove("error");
-});
+        });
+
+        //Clear feedback message if user clicks "Rensa"
+        form.addEventListener('reset', () =>{
+            feedback.textContent = ''
+        })
+        // Inject the cloned template into the modal
+        container.appendChild(clone)
+
+}
 
 // API-implementation
 const apiUrl = "http://localhost:5043/api/events/";
@@ -156,6 +176,7 @@ async function loadEventList() {
             
             eventCard.append(eventImg, title, description, date, time, location, organizer, category);
             apiEventListDiv.append(eventCard);
+            
         }     
         apiStatus.textContent = `${events.length} evenemang hämtades`;
 
@@ -182,13 +203,13 @@ async function loadEventList() {
                 modalLocation.textContent = location;
                 modalOrganizer.textContent = organizer;
                 modalCategory.textContent = category;
-
+                mountBookingForm(title);
                 //open the modal
                 modal.classList.add('active');
                 modal.setAttribute('aria-hidden', 'false');
-            });
-        });
-
+            });            
+        });       
+       
     } catch (error) {
         console.error("Kunde inte hämta evenemang. Se Network för mer information.");
         apiStatus.textContent = userMessage;
