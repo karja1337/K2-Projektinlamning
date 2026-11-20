@@ -59,7 +59,9 @@ function mountBookingForm(eventTitle) {
         const formData = new FormData(form)
         const bookingData = Object.fromEntries(formData.entries());
         const registrationTime = new Date().toLocaleString();
+        const jsonData = JSON.stringify(bookingData);
         console.log('Bokning skickad:', bookingData);
+        console.log(jsonData)
 
         // Present confimation message in feedback paragraph
         if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
