@@ -71,7 +71,7 @@ function mountBookingForm(eventTitle) {
         if (bookingData.groupsize === "1"){
             feedback.textContent = 
                 `Tack för din bokning ${bookingData.name}! 
-                Du har bokat ${bookingData.groupsize} plats till ${eventTitle}.
+                Du har bokat ${bookingData.groupsize} plats till ${bookingData.eventbooking}.
                 En bekräftelse skickas till ${bookingData.email}.
                 Bokning registrerad: ${registrationTime}`;
             feedback.classList.add("success");
@@ -80,7 +80,7 @@ function mountBookingForm(eventTitle) {
         }
         feedback.textContent = 
         `Tack för din bokning ${bookingData.name}! 
-        Du har bokat ${bookingData.groupsize} platser till ${eventTitle}.
+        Du har bokat ${bookingData.groupsize} platser till ${bookingData.eventbooking}.
         En bekräftelse skickas till ${bookingData.email}.
         Bokning registrerad: ${registrationTime}`;
         feedback.classList.add("success");
