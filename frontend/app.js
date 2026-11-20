@@ -251,7 +251,7 @@ function fillModalBox(card) {
     const location = card.querySelector('.event-card-location').textContent;
     const organizer = card.querySelector('.event-card-organizer').textContent;
     const category = card.querySelector('.event-card-category').textContent;
-
+    mountBookingForm(title);
     // add modal content
     modalImg.src = img;
     modalTitle.textContent = title;
