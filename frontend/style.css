@@ -71,6 +71,11 @@ footer a:hover, footer a:focus {
     list-style: none;
 }
 
+.header-title a {
+    text-decoration: none;
+    color: #000;
+}
+
 .nav-list a {
     color: #814700;
     font-size: large;
@@ -162,27 +167,27 @@ footer a:hover, footer a:focus {
 }
 
 .event-card-date {
-    border: 2px solid #eec28d;
-    background-color: bisque;
+    border: 2px solid #acacac;
+    background-color: #ececec;
 }
 
 .event-card-time {
     border: 2px solid #c2da39;
-    background-color: #e2fa8a;
+    background-color: #edf5d5;
 }
 
 .event-card-location {
-    border: 2px solid #6495d4;
-    background-color: #aee1eb;
+    border: 2px solid #75a3e0;
+    background-color: #d8f1f5;
 }
 
 .event-card-organizer {
-    border: 2px solid #a6ac52;
-    background-color: #e1e29a;
+    border: 2px solid #52ac70;
+    background-color: #ddf3e5;
 }
 .event-card-category {
-    border: 2px solid #b42318;
-    background-color: #f3b263;
+    border: 2px solid #a18bdd;
+    background-color: #ebdbf7;
 }
 
 .event-card-desc {
@@ -330,11 +335,12 @@ footer a:hover, footer a:focus {
 
     .nav-list {
         display: flex;
-        margin-right: 1rem;
+        margin: 0rem 1rem;
     }
 
     .nav-list li {
         margin: 0.5rem;
+        min-width: 62px;
     }
 
     .event-list {
