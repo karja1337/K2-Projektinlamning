@@ -296,25 +296,6 @@ footer a:hover, footer a:focus {
     color: #b42318;
 }
 
-/* .toggle-booking-btn {
-    box-sizing: border-box;
-    width: fit-content;
-    
-    color: black;
-    text-decoration: none;
-    border-radius: 7px;
-    padding: 6px 16px;
-    border: 2px solid #303030;
-    background-color: #e7e7e7;
-}
-
-.toggle-booking-btn:hover, .toggle-booking-btn:focus {
-    background-color: white;
-    border-color: #6495d4;
-    color: #2c4970;
-    text-decoration: underline;
-} */
-
 /*Search bar*/
 #search-bar {
     padding: 6px;
