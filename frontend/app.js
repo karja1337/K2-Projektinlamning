@@ -108,7 +108,7 @@ async function loadEventList() {
     apiStatus.textContent = "Hämtar evenemang...";
     apiEventListDiv.replaceChildren();
 
-    let userMessage = "Evenemangen kunde inte hämtas. Försök igen.";
+    let userMessage = "Evenemangen kunde inte hämtas. Uppdatera sidan för att försöka igen.";
 
     try {
         const response = await fetch(apiUrl);
@@ -285,7 +285,7 @@ categoryList.addEventListener("change", () => {
             card.classList.add("hidden");
         }
 
-        const visibleCards = document.querySelectorAll(".event-card:not(.hidden");
+        const visibleCards = document.querySelectorAll(".event-card:not(.hidden)");
 
         if (visibleCards.length === 0) {
             apiStatus.textContent = "Det finns inga evenemang inom denna kategorin.";
