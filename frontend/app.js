@@ -135,7 +135,24 @@ async function loadEventList() {
             eventCard.tabIndex = 0;
 
             const eventImg = document.createElement("img");
-            eventImg.setAttribute('src', 'images/placeholder_cover.jpg');
+            let imgSrc;
+            const eventId = event.id;
+            switch (eventId) {
+                case 1:
+                    imgSrc = 'images/kod_tillsammans_cover.jpg';
+                    break;
+                case 2:
+                    imgSrc = 'images/vintermarknad_cover.jpg';
+                    break;
+                case 3:
+                    imgSrc = 'images/springa_park_cover.jpg';
+                    break;
+                case 4:
+                    imgSrc = 'images/sagostund_cover.jpg';
+                    break;
+            }
+
+            eventImg.setAttribute('src', imgSrc);
             eventImg.classList.add('event-card-img')
 
             const title = document.createElement("h3");
