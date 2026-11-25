@@ -61,40 +61,33 @@ function mountBookingForm(eventTitle) {
         const registrationTime = new Date().toLocaleString();
         const jsonData = JSON.stringify(bookingData);
         console.log('Bokning skickad:', bookingData);
-        console.log(jsonData)
+        // console.log(jsonData);
+
+        const name = bookingData.name.trim();
 
         // Present confimation message in feedback paragraph
-        if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
+        if (name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
             feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
             feedback.classList.add("error");
             feedback.classList.remove("success");
             return;
         }
-        if (bookingData.groupsize === "1"){
-            feedback.textContent = 
-                `Tack för din bokning ${bookingData.name}! 
-                Du har bokat ${bookingData.groupsize} plats till ${bookingData.eventbooking}.
-                En bekräftelse skickas till ${bookingData.email}.
-                Bokning registrerad: ${registrationTime}`;
-            feedback.classList.add("success");
-            feedback.classList.remove("error");
-            return;
-        }
+
         feedback.textContent = 
-        `Tack för din bokning ${bookingData.name}! 
-        Du har bokat ${bookingData.groupsize} platser till ${bookingData.eventbooking}.
-        En bekräftelse skickas till ${bookingData.email}.
-        Bokning registrerad: ${registrationTime}`;
+            `Tack för din bokning ${name}! 
+            Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
+            En bekräftelse skickas till ${bookingData.email}.
+            Bokning registrerad: ${registrationTime}`;
         feedback.classList.add("success");
         feedback.classList.remove("error");
         });
 
-        //Clear feedback message if user clicks "Rensa"
+        // Clear feedback message if user clicks "Rensa"
         form.addEventListener('reset', () =>{
-            feedback.textContent = ''
+            feedback.textContent = '';
         })
         // Inject the cloned template into the modal
-        container.appendChild(clone)
+        container.appendChild(clone);
 
 }
 
