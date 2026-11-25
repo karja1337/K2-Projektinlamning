@@ -57,24 +57,25 @@ function mountBookingForm(eventTitle) {
         e.preventDefault();
 
         const formData = new FormData(form)
-        const bookingData = Object.fromEntries(formData.entries());
+        // Trims every string in object.FromEntries
+        const bookingData = Object.fromEntries(
+        Array.from(formData.entries(), ([key, value]) => [
+            key, 
+            typeof value === 'string' ? value.trim() : value
+        ])
+        );
+        // Handles multiple whitespaces between first and last name
+        if (bookingData.name) {
+            bookingData.name = bookingData.name.replace(/\s+/g, ' ');
+        }
+
         const registrationTime = new Date().toLocaleString();
         const jsonData = JSON.stringify(bookingData);
         console.log('Bokning skickad:', bookingData);
-        // console.log(jsonData);
-
-        const name = bookingData.name.trim();
-
-        // Present confimation message in feedback paragraph
-        if (name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
-            feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
-            feedback.classList.add("error");
-            feedback.classList.remove("success");
-            return;
-        }
+        console.log(jsonData);
 
         feedback.textContent = 
-            `Tack för din bokning ${name}! 
+            `Tack för din bokning ${bookingData.name}! 
             Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
             En bekräftelse skickas till ${bookingData.email}.
             Bokning registrerad: ${registrationTime}`;
