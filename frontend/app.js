@@ -18,11 +18,12 @@ closeModalBtn.addEventListener('click', function(){
 
 // Function to mount the booking form
 function mountBookingForm(eventTitle) {
-    const container = document.getElementById('modal-form-container')
-    const template = document.getElementById('booking-form-template')
+    const container = document.getElementById('modal-form-container');
+    const template = document.getElementById('booking-form-template');
     
-    if (!container || !template) 
+    if (!container || !template) {
         return; 
+    }
 
     container.innerHTML = '';
     
@@ -46,57 +47,53 @@ function mountBookingForm(eventTitle) {
             toggleBtn.setAttribute('aria-expanded', 'true');
             toggleBtn.textContent = 'Avbryt bokning';
         } else {
-            form.setAttribute('hidden', '')
+            form.setAttribute('hidden', '');
             toggleBtn.setAttribute('aria-expanded', 'false');
             toggleBtn.textContent = 'Boka plats';
         }
     });
 
-    // Handle booking submit and confirmation
+    // Handle booking submit and confirmation.
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        // Trims every string in object.FromEntries.
         const formData = new FormData(form)
-        const bookingData = Object.fromEntries(formData.entries());
+        const bookingData = Object.fromEntries(
+            Array.from(formData.entries(), ([key, value]) => [
+                key, 
+                typeof value === 'string' ? value.trim() : value
+            ])
+        );
+        
+        // Handles multiple whitespaces between first and last name.
+        if (bookingData.name) {
+            bookingData.name = bookingData.name.replace(/\s+/g, ' ');
+        }
+
         const registrationTime = new Date().toLocaleString();
         const jsonData = JSON.stringify(bookingData);
         console.log('Bokning skickad:', bookingData);
-        console.log(jsonData)
+        console.log(jsonData);
 
-        // Present confimation message in feedback paragraph
-        if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
-            feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
-            feedback.classList.add("error");
-            feedback.classList.remove("success");
-            return;
-        }
-        if (bookingData.groupsize === "1"){
-            feedback.textContent = 
-                `Tack för din bokning ${bookingData.name}! 
-                Du har bokat ${bookingData.groupsize} plats till ${bookingData.eventbooking}.
-                En bekräftelse skickas till ${bookingData.email}.
-                Bokning registrerad: ${registrationTime}`;
-            feedback.classList.add("success");
-            feedback.classList.remove("error");
-            return;
-        }
         feedback.textContent = 
-        `Tack för din bokning ${bookingData.name}! 
-        Du har bokat ${bookingData.groupsize} platser till ${bookingData.eventbooking}.
-        En bekräftelse skickas till ${bookingData.email}.
-        Bokning registrerad: ${registrationTime}`;
+            `Tack för din bokning ${bookingData.name}! 
+            Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
+            En bekräftelse skickas till ${bookingData.email}.
+            Bokning registrerad: ${registrationTime}`;
         feedback.classList.add("success");
         feedback.classList.remove("error");
-        });
+    });
 
-        //Clear feedback message if user clicks "Rensa"
-        form.addEventListener('reset', () =>{
-            feedback.textContent = ''
-        })
-        // Inject the cloned template into the modal
-        container.appendChild(clone)
+    // Clear feedback message if user clicks "Rensa".
+    form.addEventListener('reset', () =>{
+        feedback.textContent = '';
+    })
 
+    // Inject the cloned template into the modal.
+    container.appendChild(clone);
 }
+
 
 // API-implementation
 const apiUrl = "http://localhost:5043/api/events/";
