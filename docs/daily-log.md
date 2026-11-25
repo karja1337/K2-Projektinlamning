@@ -1,3 +1,22 @@
+## Daily Scrum – 25/11-26
+
+### Framsteg mot sprintmålet
+- Felhantering för HTTP statusgrupper är klart.
+- Säker användaråterkoppling färdig.
+### Arbete till nästa avstämning
+- Skapa en release candidate.
+- Verifiera projektet, användarflöde, databas, frontend, api och dokumentation.
+- Genomfört avslutande retrospective.
+- Planera redovisning.
+### Hinder eller risker
+- En borta i teamet.
+### Hjälp eller beslut som behövs
+- En pull request behöver review.
+### Förändring i planen eller tavlan
+- Behöver lägga till nya kort för det nya uppdraget.
+
+---
+
 ## Daily Scrum – 18/11-26
 
 ### Framsteg mot sprintmålet
