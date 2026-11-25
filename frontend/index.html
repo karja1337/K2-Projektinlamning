@@ -50,31 +50,32 @@
                 <fieldset>
                     <legend>Bokningsuppgifter</legend>
                     <div>
-                        <label>Namn: <input name="name" type="text" maxlength="100" required></label>
+                        <label>Namn: </label>
+                        <input name="name" type="text" maxlength="100" required>
                     </div>
                     <div>
-                        <label>E-post: <input name="email" type="email" maxlength="250" required></label>
+                        <label>E-post: </label>
+                        <input name="email" type="email" maxlength="250" required>
                     </div>
                     <div>
-                        <label>Tel-nummer: <input name="phonenumber" type="tel" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" required></label>
+                        <label>Tel-nummer: </label>
+                        <input name="phonenumber" type="tel" placeholder="xxx-xxxxxxx" pattern="[0-9]{3}-[0-9]{7}" required>
                     </div>
                     <div>
-                        <label>
-                            Antal:
-                            <select name="groupsize">
-                                <option value="">Välj antal</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </label>                        
+                        <label>Antal personer:</label>
+                        <select name="groupsize">
+                            <option value="">Välj antal</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>   
                     </div>
 
                     <button type="submit">Skicka bokning</button>
