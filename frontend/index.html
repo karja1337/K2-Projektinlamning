@@ -8,23 +8,6 @@
         <script src="app.js" defer></script>
     </head>
 
-
-<div id="event-modal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true">
-        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Stäng">&times;</button>
-        <img id="modal-img" src="" alt="" class="modal-img">
-        <h3 id="modal-title" class="modal-title"></h3>
-        <p id="modal-desc" class="modal-desc"></p>
-        <div class="modal-meta">
-            <span id="modal-date" class="event-card-date"></span>
-            <span id="modal-time" class="event-card-time"></span>
-            <span id="modal-location" class="event-card-location"></span>
-            <span id="modal-organizer" class="event-card-organizer"></span>       
-            <span id="modal-category" class="event-card-category"></span>             
-        </div>
-        <div id="modal-form-container"></div>
-    </div>
-</div>
 <body>
     <header class="site-header">
     <h1 class="header-title"><a href="index.html">Älvsbyns Kommun</a></h1>
@@ -39,6 +22,24 @@
         
         <input id="search-bar" type="text" placeholder="Sök...">
     </header>
+
+    <div id="event-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button type="button" class="modal-close" id="modal-close-btn" aria-label="Stäng">&times;</button>
+            <img id="modal-img" src="" alt="" class="modal-img">
+            <h3 id="modal-title" class="modal-title"></h3>
+            <p id="modal-desc" class="modal-desc"></p>
+            <div class="modal-meta">
+                <span id="modal-date" class="event-card-date"></span>
+                <span id="modal-time" class="event-card-time"></span>
+                <span id="modal-location" class="event-card-location"></span>
+                <span id="modal-organizer" class="event-card-organizer"></span>       
+                <span id="modal-category" class="event-card-category"></span>             
+            </div>
+            <div id="modal-form-container"></div>
+        </div>
+    </div>
+
     <template id="booking-form-template">
         <div class="booking-section">
             <button type="button" class="toggle-booking-btn" aria-expanded="false">Boka plats</button>
