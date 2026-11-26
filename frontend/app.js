@@ -76,6 +76,14 @@ function mountBookingForm(eventTitle) {
         console.log('Bokning skickad:', bookingData);
         console.log(jsonData);
 
+        // Present confimation message in feedback paragraph
+        if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
+            feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
+            feedback.classList.add("error");
+            feedback.classList.remove("success");
+            return;
+        }
+        
         feedback.textContent = 
             `Tack för din bokning ${bookingData.name}! 
             Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
