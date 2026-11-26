@@ -147,6 +147,8 @@ För att se HTTP-statuskoder se **DevTools > Network > Headers**
 ## Säkerhets- och integritetsbeslut
 3NF,
 Säkerhet i frontend
+- Utskrift och inmatning hanteras säkert med hjälp av textContent.
+- Felhantering: Hemsidan skriver ut begripligt felmeddelande med tydligt nästa steg vid HTTP-fel utan att skriva ut teknisk information.
 
 
 
@@ -168,7 +170,12 @@ Säkerhet i frontend
 
 
 ## Tekniker
-N/A
+- HTML - Struktur och semantiska element.
+- CSS - Layout och styling. Responsiv design.
+- JavaScript - interaktion, DOM-manipulation och eventhantering.
+- Fetch API - Hämtar data asynkront från externt API med `async/await`
+- JSON - Dataformat för svaren från API:et.
+- Git & Github - Versionshantering.
 
 
 
