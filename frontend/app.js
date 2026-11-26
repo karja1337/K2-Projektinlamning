@@ -33,9 +33,11 @@ function mountBookingForm(eventTitle) {
     const form = clone.querySelector('.card-booking-form');
     const hiddenEventTitle = clone.querySelector('input[name="eventbooking"]');
     const feedback = clone.querySelector('.booking-feedback');
+    const registrationTime = clone.querySelector('input[name="registrationTime"]');
     
     // Sets the hidden input to the eventtitle to display it in the confirmation
     hiddenEventTitle.value = eventTitle;
+    registrationTime.value = new Date().toLocaleString();
 
     // Toggle form visibility when clicking
     toggleBtn.addEventListener('click', () => {
@@ -70,9 +72,7 @@ function mountBookingForm(eventTitle) {
         if (bookingData.name) {
             bookingData.name = bookingData.name.replace(/\s+/g, ' ');
         }
-
-        const registrationTime = new Date().toLocaleString();
-        
+              
 
         // Present confimation message in feedback paragraph
         if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
@@ -86,7 +86,7 @@ function mountBookingForm(eventTitle) {
             `Tack för din bokning ${bookingData.name}! 
             Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
             En bekräftelse skickas till ${bookingData.email}.
-            Bokning registrerad: ${registrationTime}`;
+            Bokning registrerad: ${bookingData.registrationTime}`;
         feedback.classList.add("success");
         feedback.classList.remove("error");
 
