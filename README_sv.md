@@ -12,7 +12,7 @@
 [`oliboh`](https://github.com/oliboh)
 
 ## Innehållsförteckning
-- [Projektets syfte och målgrupp](README_sv.md#projektets-syfte-och-målgrupp)
+<!-- - [Projektets syfte och målgrupp](README_sv.md#projektets-syfte-och-målgrupp)
 - [Projektets beroenden](README_sv.md#projektets-beroenden)
 - [Sätt upp och starta projektet](README_sv.md#sätt-upp-och-starta-projektet)
 - [Databas](README_sv.md#databas)
@@ -24,7 +24,7 @@
 - [Tekniker](README_sv.md#tekniker)
 - [Git-arbetsflöde](README_sv.md#git-arbetsflöde)
 - [Kanban-tavla](README_sv.md#kanban-tavla)
-- [Mappstruktur](README_sv.md#mappstruktur)
+- [Mappstruktur](README_sv.md#mappstruktur) -->
 
 
 
@@ -36,7 +36,9 @@ Besökaren kan se kommande evenemang med nödvändig information (datum, startti
 För att hitta ett evenemang som passar besökarens intressen finns det en sökfunktion och evenemangen kan också filtreras efter kategori.
 
 > [!IMPORTANT]
-> Inga bokningar sparas och alla evenemang som hämtas från det externa API:t är **fiktiva.** 
+> Inga bokningar sparas och alla evenemang som hämtas från det externa API:t är **fiktiva.**
+> 
+> Projektet har "Älvsbyns kommun" som **fiktiv kund** och är för redovisande syfte utan koppling till någon riktig kommun.
 
 
 ## Projektets beroenden
@@ -51,32 +53,36 @@ Klicka på `<>Code` och kopiera HTTPS-länken eller kopiera den nedan:
 https://github.com/karja1337/K2-Projektinlamning.git
 ```
 ### 2. Klona repot
-Öppna terminalen, gå till mappen dit du vill klona repot och kör:
+Öppna terminalen, ställ dig i mappen dit du vill klona repot och kör:
 
 ```
 git clone https://github.com/karja1337/K2-Projektinlamning.git
 ```
 
 ### 3. Klona och kör API
-Fiktiva evenemang hämtas från ett externt API: https://github.com/m-lindberg/eventflow-api
 
-Klona repot för extern API:
+> [!IMPORTANT] För att hemsidan ska visa datan från API:n måste den köras i en terminal i bakgrunden.
+
+Fiktiva evenemang hämtas från ett externt API: https://github.com/m-lindberg/eventflow-api \
+Se dokumentation: [API-dokumentation](docs/api.md)
+
+1. Klona repot för extern API:
 ```
 git clone https://github.com/m-lindberg/eventflow-api.git
 ```
-I terminalen, ställ dig i projektmappen `.\eventflow-api` och kör sedan:
+2. I terminalen, ställ dig i projektmappen:
 
+```
+cd eventflow-api
+```
+3. Kör API:t:
 ```
 dotnet run --urls http://localhost:5043/
 ```
 
 ### 4. Öppna EventFlow
-Öppna `frontend\index.html` i din browser för att se EventFlow. Klart!
+Öppna `frontend\index.html` i din browser. Klart!
 
-
-
-> [!IMPORTANT]
-> Låt terminalen vara öppen för att köra API:t i bakgrunden.
 
 > För mer information: [GitHub Docs: Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
@@ -84,11 +90,11 @@ dotnet run --urls http://localhost:5043/
 
 
 ## Databas
-Projektet har en databas som är fullt fungerande men inte kopplat till frontend-delen av projektet. För att sätta upp databasen och se valda tabeller kan SQL-filerna i mappen `database` köras, i ordningen som listas:
+Projektet har en databas som är fullt fungerande men inte kopplat till frontend-delen av projektet. För att sätta upp databasen på rätt sätt och se valda tabeller kan SQL-filerna i mappen `database` köras:
 
 ### Köra SQL-queries 
 1. Se till att SSMS är nedladdat och har en lokal uppkoppling.
-2. I SSMS, kör följande för att först sätta upp databasen och dess tabeller: 
+2. För att först sätta upp databasen och dess tabeller kör följande: 
 ```
 database\01-schemaV2.sql
 ```
@@ -100,7 +106,7 @@ database\02-datav2.sql
 ```
 database\03-queries.sql
 ```
-5. Skapa Views, Procedures och Trigger med test genom att köra följande filer under mappen `database`:
+5. Skapa Views, Stored Procedures och Trigger med test genom att köra respektive filer:
 ```
 04-views.sql
 05-procedures.sql
@@ -132,6 +138,7 @@ http://localhost:5043/api/test/empty
 http://localhost:5043/api/test/error
 ```
 
+### Förväntade resultat
 `/api/events` – 200 OK och en lista med evenemang.\
 `/api/events/1` – 200 OK och ett evenemang.\
 `/api/events/9999` – för 404 Not Found.\
@@ -143,11 +150,11 @@ För att se HTTP-statuskoder se **DevTools > Network > Headers**
 
 
 ## Säkerhets- och integritetsbeslut
-Säkerhet i frontend
+### Säkerhet i frontend
 - Utskrift och inmatning hanteras säkert med hjälp av `textContent`.
 - Felhantering: Hemsidan skriver ut begripligt felmeddelande med tydligt nästa steg vid HTTP-fel utan att skriva ut teknisk information.
 
-Integritetsregler databas
+### Integritetsregler databas
 - Databasen uppfyller tredje normalformen och har inga transitiva beroenden.
 - Databasmodellen är granskad med insättnings-, uppdaterings- och borttagnings- anomali.
 - Varje rad i en tabell är identifierbara med en unik primärnyckel som inte får vara NULL.
@@ -156,10 +163,11 @@ Integritetsregler databas
 
 
 ## Kundvärde
-- Möjlighet att visa kommande evenemang.
-- En användarvänlig hemsida.
-- Kunna söka efter och filtrera evenemang.
-- Kunna boka in sig på ett eller flera evenemang.
+Med EventFlow så kan medlemmarna i Älvsbyns kommun se lokala evenemang på en användarvänlig och stilren hemsida. Hemsidan är responsiv, byggt i förstahand för mobilskärmen, men skalar enkelt med större skärmar. Inga funktioner eller information blir otillgängliga på större eller mindre skärmar. Alla länkar och menyer går också att fokusera på och välja med Tabb för att hemsidan ska gå att använda med bara tangentbordet.
+
+Alla evenemang kan sökas på med hemsidans sökfunktion, eller filtreras efter kategori med en enkel dropdown-meny.
+
+Bokning sker i bokningsformuläret på ett valt evenemang. Bokningen och evenemanget kan närsomhelst avbrytas med "Avbryt bokning" och "X"-stäng knappen i hörnet på kortet. I bokningen har besökaren ett alternativ att välja antal i sällskapet, så arrangören kan hålla reda på hur många besökare som förväntas komma. Besökaren kan boka sig till ett eller flera evenemang, och får en bekräftelse på sin bokning efter den genomförts.
 
 
 
@@ -177,6 +185,7 @@ Integritetsregler databas
 
 
 ## Tekniker
+Följande tekniker har använts i projektet.
 - **HTML** - Struktur och semantiska element.
 - **CSS** - Layout och styling. Responsiv design.
 - **JavaScript** - interaktion, DOM-manipulation och eventhantering.
@@ -189,10 +198,10 @@ Integritetsregler databas
 ## Git-arbetsflöde
 Teamet har arbetat efter Github Flow.
 
-- Skapa branch från `main`.
-- Gör små och tydliga commits.
+- Skapa ny branch från `main`.
+- Gör små och tydliga commits på nya branchen.
 - Öppna Pull Request.
-- Genomför Code Review.
+- Genomför minst en kodgranskning av annan teammedlem.
 - Approve och merge till `main`.
 
 
