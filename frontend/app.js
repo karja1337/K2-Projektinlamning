@@ -33,9 +33,11 @@ function mountBookingForm(eventTitle) {
     const form = clone.querySelector('.card-booking-form');
     const hiddenEventTitle = clone.querySelector('input[name="eventbooking"]');
     const feedback = clone.querySelector('.booking-feedback');
+    const registrationTime = clone.querySelector('input[name="registrationTime"]');
     
     // Sets the hidden input to the eventtitle to display it in the confirmation
     hiddenEventTitle.value = eventTitle;
+    registrationTime.value = new Date().toLocaleString('en-GB');
 
     // Toggle form visibility when clicking
     toggleBtn.addEventListener('click', () => {
@@ -70,19 +72,28 @@ function mountBookingForm(eventTitle) {
         if (bookingData.name) {
             bookingData.name = bookingData.name.replace(/\s+/g, ' ');
         }
+              
 
-        const registrationTime = new Date().toLocaleString();
-        const jsonData = JSON.stringify(bookingData);
-        console.log('Bokning skickad:', bookingData);
-        console.log(jsonData);
-
+        // Present confimation message in feedback paragraph
+        if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
+            feedback.textContent = "Vänligen fyll i namn, email, telefonnummer, evenemang och antal biljetter";
+            feedback.classList.add("error");
+            feedback.classList.remove("success");
+            return;
+        }
+        
         feedback.textContent = 
             `Tack för din bokning ${bookingData.name}! 
             Du har bokat ${bookingData.groupsize} plats(er) till ${bookingData.eventbooking}.
             En bekräftelse skickas till ${bookingData.email}.
-            Bokning registrerad: ${registrationTime}`;
+            Bokning registrerad: ${bookingData.registrationTime}`;
         feedback.classList.add("success");
         feedback.classList.remove("error");
+
+        //Booking data and JSON demo in console
+        const jsonData = JSON.stringify(bookingData);
+        console.log('Bokning skickad:', bookingData);
+        console.log(jsonData);
     });
 
     // Clear feedback message if user clicks "Rensa".
