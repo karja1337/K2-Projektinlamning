@@ -143,10 +143,15 @@ För att se HTTP-statuskoder se **DevTools > Network > Headers**
 
 
 ## Säkerhets- och integritetsbeslut
-3NF,
 Säkerhet i frontend
 - Utskrift och inmatning hanteras säkert med hjälp av `textContent`.
 - Felhantering: Hemsidan skriver ut begripligt felmeddelande med tydligt nästa steg vid HTTP-fel utan att skriva ut teknisk information.
+
+Integritetsregler databas
+- Databasen uppfyller tredje normalformen och har inga transitiva beroenden.
+- Databasmodellen är granskad med insättnings-, uppdaterings- och borttagnings- anomali.
+- Varje rad i en tabell är identifierbara med en unik primärnyckel som inte får vara NULL.
+- Kopplingarna mellan tabellerna är granskade så att inga beroenden hindrar t.ex borttagning av schemalagt event.
 
 
 
