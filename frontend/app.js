@@ -72,9 +72,7 @@ function mountBookingForm(eventTitle) {
         }
 
         const registrationTime = new Date().toLocaleString();
-        const jsonData = JSON.stringify(bookingData);
-        console.log('Bokning skickad:', bookingData);
-        console.log(jsonData);
+        
 
         // Present confimation message in feedback paragraph
         if (bookingData.name === "" || bookingData.email === "" || bookingData.phonenumber === "" || bookingData.groupsize === ""){
@@ -91,6 +89,11 @@ function mountBookingForm(eventTitle) {
             Bokning registrerad: ${registrationTime}`;
         feedback.classList.add("success");
         feedback.classList.remove("error");
+
+        //Booking data and JSON demo in console
+        const jsonData = JSON.stringify(bookingData);
+        console.log('Bokning skickad:', bookingData);
+        console.log(jsonData);
     });
 
     // Clear feedback message if user clicks "Rensa".
