@@ -35,7 +35,7 @@ Besökaren kan se kommande evenemang med nödvändig information (datum, startti
 
 För att hitta ett evenemang som passar besökarens intressen finns det en sökfunktion och evenemangen kan också filtreras efter kategori.
 
-> [!WARNING]
+> [!IMPORTANT]
 > Inga bokningar sparas och alla evenemang som hämtas från det externa API:t är **fiktiva.** 
 
 
@@ -69,12 +69,14 @@ I terminalen, ställ dig i projektmappen `.\eventflow-api` och kör sedan:
 ```
 dotnet run --urls http://localhost:5043/
 ```
-> [!IMPORTANT]
-> Låt terminalen vara öppen för att köra API:t i bakgrunden.
 
 ### 4. Öppna EventFlow
 Öppna `frontend\index.html` i din browser för att se EventFlow. Klart!
 
+
+
+> [!IMPORTANT]
+> Låt terminalen vara öppen för att köra API:t i bakgrunden.
 
 > För mer information: [GitHub Docs: Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
@@ -100,11 +102,10 @@ database\03-queries.sql
 ```
 5. Skapa Views, Procedures och Trigger med test genom att köra följande filer under mappen `database`:
 ```
-database
-├─ 04-views.sql
-├─ 05-procedures.sql
-├─ 06-trigger.sql
-└─ 07-trigger-tests.sql
+04-views.sql
+05-procedures.sql
+06-trigger.sql
+07-trigger-tests.sql
 ```
 
 
@@ -144,7 +145,7 @@ För att se HTTP-statuskoder se **DevTools > Network > Headers**
 ## Säkerhets- och integritetsbeslut
 3NF,
 Säkerhet i frontend
-- Utskrift och inmatning hanteras säkert med hjälp av textContent.
+- Utskrift och inmatning hanteras säkert med hjälp av `textContent`.
 - Felhantering: Hemsidan skriver ut begripligt felmeddelande med tydligt nästa steg vid HTTP-fel utan att skriva ut teknisk information.
 
 
@@ -174,7 +175,7 @@ Säkerhet i frontend
 - **HTML** - Struktur och semantiska element.
 - **CSS** - Layout och styling. Responsiv design.
 - **JavaScript** - interaktion, DOM-manipulation och eventhantering.
-- **Fetch API** - Hämtar data asynkront från externt API med `async/await`.
+- **Fetch API** - Hämtar data asynkront från externt API med `async`/`await`.
 - **JSON** - Dataformat för svaren från API:et.
 - **Git & Github** - Versionshantering.
 
