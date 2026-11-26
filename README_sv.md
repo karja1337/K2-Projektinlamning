@@ -15,7 +15,7 @@
 - [Projektets syfte och målgrupp](README_sv.md#projektets-syfte-och-målgrupp)
 - [Projektets beroenden](README_sv.md#projektets-beroenden)
 - [Sätt upp och starta projektet](README_sv.md#sätt-upp-och-starta-projektet)
-- [Sätt upp databas](README_sv.md#databas)
+- [Sätt upp databas](README_sv.md#sätt-upp-databas)
 - [API](README_sv.md#api)
 - [Testinstruktioner](README_sv.md#testinstruktioner)
 - [Säkerhets- och integritetsbeslut](README_sv.md#säkerhets--och-integritetsbeslut)
