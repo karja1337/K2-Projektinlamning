@@ -12,10 +12,10 @@
 [`oliboh`](https://github.com/oliboh)
 
 ## Innehållsförteckning
-<!-- - [Projektets syfte och målgrupp](README_sv.md#projektets-syfte-och-målgrupp)
+- [Projektets syfte och målgrupp](README_sv.md#projektets-syfte-och-målgrupp)
 - [Projektets beroenden](README_sv.md#projektets-beroenden)
 - [Sätt upp och starta projektet](README_sv.md#sätt-upp-och-starta-projektet)
-- [Databas](README_sv.md#databas)
+- [Sätt upp databas](README_sv.md#databas)
 - [API](README_sv.md#api)
 - [Testinstruktioner](README_sv.md#testinstruktioner)
 - [Säkerhets- och integritetsbeslut](README_sv.md#säkerhets--och-integritetsbeslut)
@@ -24,7 +24,7 @@
 - [Tekniker](README_sv.md#tekniker)
 - [Git-arbetsflöde](README_sv.md#git-arbetsflöde)
 - [Kanban-tavla](README_sv.md#kanban-tavla)
-- [Mappstruktur](README_sv.md#mappstruktur) -->
+- [Mappstruktur](README_sv.md#mappstruktur)
 
 
 
@@ -61,7 +61,8 @@ git clone https://github.com/karja1337/K2-Projektinlamning.git
 
 ### 3. Klona och kör API
 
-> [!IMPORTANT] För att hemsidan ska visa datan från API:n måste den köras i en terminal i bakgrunden.
+> [!IMPORTANT] 
+> För att hemsidan ska visa datan från API:n måste den köras i en terminal i bakgrunden.
 
 Fiktiva evenemang hämtas från ett externt API: https://github.com/m-lindberg/eventflow-api \
 Se dokumentation: [API-dokumentation](docs/api.md)
@@ -89,7 +90,7 @@ dotnet run --urls http://localhost:5043/
 
 
 
-## Databas
+## Sätt upp databas
 Projektet har en databas som är fullt fungerande men inte kopplat till frontend-delen av projektet. För att sätta upp databasen på rätt sätt och se valda tabeller kan SQL-filerna i mappen `database` köras:
 
 ### Köra SQL-queries 
