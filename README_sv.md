@@ -65,7 +65,7 @@ git clone https://github.com/karja1337/K2-Projektinlamning.git
 > För att hemsidan ska visa datan från API:n måste den köras i en terminal i bakgrunden.
 
 Fiktiva evenemang hämtas från ett externt API: https://github.com/m-lindberg/eventflow-api \
-Se dokumentation: [API-dokumentation](docs/api.md)
+Se projektets API-dokumentation: [API-dokumentation](docs/api.md)
 
 1. Klona repot för extern API:
 ```
@@ -156,7 +156,7 @@ För att se HTTP-statuskoder se **DevTools > Network > Headers**
 - Felhantering: Hemsidan skriver ut begripligt felmeddelande med tydligt nästa steg vid HTTP-fel utan att skriva ut teknisk information.
 
 ### Integritetsregler databas
-- Databasen uppfyller tredje normalformen och har inga transitiva beroenden.
+- Databasen uppfyller tredje normalformen (3NF) och har inga transitiva beroenden.
 - Databasmodellen är granskad med insättnings-, uppdaterings- och borttagnings- anomali.
 - Varje rad i en tabell är identifierbara med en unik primärnyckel som inte får vara NULL.
 - Kopplingarna mellan tabellerna görs med främmande nycklar och alla beroenden är granskade.
@@ -177,7 +177,7 @@ Bokning sker i bokningsformuläret på ett valt evenemang. Bokningen och evenema
 - Klicka in på valt evenemang.
 - Klicka på boka-knapp för att visa bokningsformulär.
 - Fyll i namn, e-post, telefonnummer och antal personer i bokningsformuläret.
-- Tryck på Skicka bokning.
+- Tryck på "Skicka bokning".
 - En bekräftelse på din bokning visas med relevant information.
 
 > [!WARNING]
@@ -189,7 +189,7 @@ Bokning sker i bokningsformuläret på ett valt evenemang. Bokningen och evenema
 Följande tekniker har använts i projektet.
 - **HTML** - Struktur och semantiska element.
 - **CSS** - Layout och styling. Responsiv design.
-- **JavaScript** - interaktion, DOM-manipulation och eventhantering.
+- **JavaScript** - Interaktion, DOM-manipulation och eventhantering.
 - **Fetch API** - Hämtar data asynkront från externt API med `async`/`await`.
 - **JSON** - Dataformat för svaren från API:et.
 - **Git & Github** - Versionshantering.
