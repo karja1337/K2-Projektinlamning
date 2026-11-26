@@ -37,7 +37,7 @@ function mountBookingForm(eventTitle) {
     
     // Sets the hidden input to the eventtitle to display it in the confirmation
     hiddenEventTitle.value = eventTitle;
-    registrationTime.value = new Date().toLocaleString();
+    registrationTime.value = new Date().toLocaleString('en-GB');
 
     // Toggle form visibility when clicking
     toggleBtn.addEventListener('click', () => {
