@@ -114,6 +114,16 @@ database
 
 
 ## API
+Vi använder ett externt API som innehåller fiktiv data i JSON format.
+
+### Kända begränsningar med extern API
+- Extern API innehåller bara exempeldata, inga riktiga evenemang.
+- Inga bokningar sparas.
+- Extern tjänst kan vara otillgänglig.
+
+
+
+## Testinstruktioner
 ### Simulera API fel
 För att simulera fel med API:n kan följande adresser användas:
 ```
@@ -132,26 +142,28 @@ http://localhost:5043/api/test/error
 
 För att se HTTP-statuskoder se **DevTools > Network > Headers**
 
-### Kända begränsningar med extern API
-- Extern API innehåller bara exempeldata, inga riktiga evenemang.
-- Inga bokningar sparas.
-- Extern tjänst kan vara otillgänglig.
-
-
 
 
 ## Säkerhets- och integritetsbeslut
-N/A
+3NF,
+Säkerhet i frontend
 
 
 
 ## Kundvärde
-N/A
+- Möjlighet att visa kommande evenemang.
+- En användarvänlig hemsida.
+- Kunna söka efter och filtrera evenemang.
+- Kunna boka in sig på ett eller flera 
 
 
 
 ## Centralt användarflöde
-N/A
+- Hitta ett evenemang som intresserar dig. 
+- Klicka in på valt evenemang.
+- Klicka på boka-knapp för att visa bokningsformulär.
+- Fyll i information som bokningsformuläret ber om.
+- Tryck på Skicka bokning.
 
 
 
@@ -161,12 +173,18 @@ N/A
 
 
 ## Git-arbetsflöde
-N/A
+Teamet har arbetat efter Github Flow.
+
+- Skapa branch från Main.
+- Gör små och tydliga commits.
+- Öppna Pull Request.
+- Genomför Code Review.
+- Approve och merge till Main.
 
 
 
 ## [Kanban-tavla](https://github.com/users/karja1337/projects/2)
-N/A
+Klicka på rubriken ovan för att se teamets Kanban-tavla.
 
 
 
