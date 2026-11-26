@@ -10,8 +10,17 @@ CREATE TABLE ScheduledEventLog (
 );
 
 
--- En trigger som loggar alla nya planerade evenemang i en loggtabell.
--- En trigger behövs för att logga nya evenemang och när dom har lagt till i ScheduledEvent tabellen.
+-- Ansvar: 
+	--triggern loggar alla nya planerade evenemang i en loggtabell.
+-- Varför triggern behövs: 
+	--triggern behövs för att man lätt ska kunna se när nya planerade evenemang har lagts till.
+-- Aktiveras: 
+	--Triggern aktiveras när ett nytt evenemang läggs till i scheduledEvent tabellen.
+-- Förväntat resultat: 
+	-- När ett nytt evenemang läggs till i ScheduledEvent tabellen ska det automatiskt lägga till samma data i ScheduleEventLog.
+-- Så verifierades resultatet:
+	-- Testade lägga in ny data i scheduledEvent tabellen och säkerställde att samma data lades till i ScheduledEventLog
+	-- Lägga in flera rader fungerar också.
 
 CREATE TRIGGER TR_ScheduledEvent_Log
 ON ScheduledEvent
