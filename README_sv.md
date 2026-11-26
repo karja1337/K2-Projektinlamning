@@ -17,6 +17,7 @@
 - [Sätt upp och starta projektet](README_sv.md#sätt-upp-och-starta-projektet)
 - [Databas](README_sv.md#databas)
 - [API](README_sv.md#api)
+- [Testinstruktioner](README_sv.md#testinstruktioner)
 - [Säkerhets- och integritetsbeslut](README_sv.md#säkerhets--och-integritetsbeslut)
 - [Kundvärde](README_sv.md#kundvärde)
 - [Centralt användarflöde](README_sv.md#centralt-användarflöde)
@@ -34,18 +35,13 @@ Besökaren kan se kommande evenemang med nödvändig information (datum, startti
 
 För att hitta ett evenemang som passar besökarens intressen finns det en sökfunktion och evenemangen kan också filtreras efter kategori.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Inga bokningar sparas och alla evenemang som hämtas från det externa API:t är **fiktiva.** 
-
-
 
 
 ## Projektets beroenden
 ### Ramverk
 - .NET 10.0 SDK (eller nyare)
-
-### Program
-- SSMS eller annat program som kan köra och visa SQL-queries.
 
 
 ## Sätt upp och starta projektet
@@ -89,20 +85,20 @@ dotnet run --urls http://localhost:5043/
 Projektet har en databas som är fullt fungerande men inte kopplat till frontend-delen av projektet. För att sätta upp databasen och se valda tabeller kan SQL-filerna i mappen `database` köras, i ordningen som listas:
 
 ### Köra SQL-queries 
-Se till att SSMS är nedladdat och har en lokal uppkoppling.\
-I SSMS, kör följande för att först sätta upp databasen och dess tabeller: 
+1. Se till att SSMS är nedladdat och har en lokal uppkoppling.
+2. I SSMS, kör följande för att först sätta upp databasen och dess tabeller: 
 ```
 database\01-schemaV2.sql
 ```
-För att fylla tabellerna med fiktiva evenemang, kör följande:
+3. För att fylla tabellerna med fiktiva evenemang, kör följande:
 ```
 database\02-datav2.sql
 ```
-För att se testdatan och tabellerna kan följande queries köras:
+4. För att se testdatan och tabellerna kan följande queries köras:
 ```
 database\03-queries.sql
 ```
-Skapa Views, Procedures och Trigger med test genom att köra följande filer under mappen `database`:
+5. Skapa Views, Procedures och Trigger med test genom att köra följande filer under mappen `database`:
 ```
 database
 ├─ 04-views.sql
@@ -114,12 +110,13 @@ database
 
 
 ## API
-Vi använder ett externt API som innehåller fiktiv data i JSON format.
+Vi använder ett externt API som innehåller fiktiv data i JSON-format.
 
 ### Kända begränsningar med extern API
 - Extern API innehåller bara exempeldata, inga riktiga evenemang.
 - Inga bokningar sparas.
 - Extern tjänst kan vara otillgänglig.
+- JSON-arrayens innehåll kan ändras och då får inte nya evenemang några bilder eftersom att bilderna är hårdkodade.
 
 
 
@@ -161,32 +158,36 @@ Säkerhet i frontend
 
 
 ## Centralt användarflöde
-- Hitta ett evenemang som intresserar dig. 
+- Hitta ett evenemang som intresserar dig. Du kan söka på evenemang eller filtrera på kategori.
 - Klicka in på valt evenemang.
 - Klicka på boka-knapp för att visa bokningsformulär.
-- Fyll i information som bokningsformuläret ber om.
+- Fyll i namn, e-post, telefonnummer och antal personer i bokningsformuläret.
 - Tryck på Skicka bokning.
+- En bekräftelse på din bokning visas med relevant information.
+
+> [!WARNING]
+> Ingen bokning sparas. Hemsidan är inte kopplad till databasen.
 
 
 
 ## Tekniker
-- HTML - Struktur och semantiska element.
-- CSS - Layout och styling. Responsiv design.
-- JavaScript - interaktion, DOM-manipulation och eventhantering.
-- Fetch API - Hämtar data asynkront från externt API med `async/await`
-- JSON - Dataformat för svaren från API:et.
-- Git & Github - Versionshantering.
+- **HTML** - Struktur och semantiska element.
+- **CSS** - Layout och styling. Responsiv design.
+- **JavaScript** - interaktion, DOM-manipulation och eventhantering.
+- **Fetch API** - Hämtar data asynkront från externt API med `async/await`.
+- **JSON** - Dataformat för svaren från API:et.
+- **Git & Github** - Versionshantering.
 
 
 
 ## Git-arbetsflöde
 Teamet har arbetat efter Github Flow.
 
-- Skapa branch från Main.
+- Skapa branch från `main`.
 - Gör små och tydliga commits.
 - Öppna Pull Request.
 - Genomför Code Review.
-- Approve och merge till Main.
+- Approve och merge till `main`.
 
 
 
@@ -201,7 +202,9 @@ K2-Projektinlamning
 ├── .vs
 ├── database
 ├── docs
-│    └── database-models
+│    ├── database-models
+│    ├── Matrices
+│    └── Presentation-Backup
 └── frontend
      └── images
 ```
