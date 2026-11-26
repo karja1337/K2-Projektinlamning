@@ -151,7 +151,7 @@ Integritetsregler databas
 - Databasen uppfyller tredje normalformen och har inga transitiva beroenden.
 - Databasmodellen är granskad med insättnings-, uppdaterings- och borttagnings- anomali.
 - Varje rad i en tabell är identifierbara med en unik primärnyckel som inte får vara NULL.
-- Kopplingarna mellan tabellerna är granskade så att inga beroenden hindrar t.ex borttagning av schemalagt event.
+- Kopplingarna mellan tabellerna görs med främmande nycklar och alla beroenden är granskade.
 
 
 
@@ -159,7 +159,7 @@ Integritetsregler databas
 - Möjlighet att visa kommande evenemang.
 - En användarvänlig hemsida.
 - Kunna söka efter och filtrera evenemang.
-- Kunna boka in sig på ett eller flera 
+- Kunna boka in sig på ett eller flera evenemang.
 
 
 
